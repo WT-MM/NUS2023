@@ -1,0 +1,41 @@
+body{
+    background-color:rgb(238, 241, 244) !important;
+}
+
+h1{
+    color:rgb(14, 123, 248);
+}
+
+.main{
+    background-color:rgb(240, 250, 255);
+    border:lightgray;
+    border-style:solid;
+    border-radius:1%;
+    border-width:1px;
+    margin-right:10px;
+    margin-left:10px;
+    padding-left:10px;
+    padding-right:10px;
+    height:100%;
+    overflow-wrap:break-word;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+
+.transcript{
+    padding-bottom:5px;
+    margin-top:5px;
+}
+
+.card-title{
+    margin-top:5%;
+}
