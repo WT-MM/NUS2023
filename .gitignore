@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+
+# Project Specific
+
+SDEval/webapp/static/images/*.png
+
 # Distribution / packaging
 .Python
 build/

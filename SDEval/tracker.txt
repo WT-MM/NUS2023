@@ -4,14 +4,14 @@ Style
 
 1 - SD2.1, dalle, sdxl
 2 - SD2.1, dalle, sdxl
-3
+3 - SD2.1, dalle
 4
 
 Perspective
 
 1 - SD2.1, dalle, sdxl
 2 - SD2.1, dalle, sdxl (only half)
-3
+3 - SD2.1, dalle
 4
 
 Creativity
@@ -25,19 +25,19 @@ Beauty
 
 1 - SD2.1, dalle, sdxl
 2 - SD2.1, dalle
-3
+3 - SD2.1
 4
 
 Composition
 
 1 - SD2.1, dalle, sdxl
-2
-3
+2 - SD2.1, dalle
+3 - SD2.1
 4
 
 Emotion
 
 1 - SD2.1, dalle, sdxl
-2
-3
+2 - SD2.1, dalle
+3 - SD2.1
 4
