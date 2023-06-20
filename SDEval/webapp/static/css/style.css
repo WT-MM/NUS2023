@@ -6,6 +6,15 @@ h1{
     color:rgb(14, 123, 248);
 }
 
+#promptText{
+    margin-top:5vh;
+    text-align:left;
+    font-size:larger;
+    font-weight:350;
+    padding-left:10vw;
+    padding-right:10vw
+}
+
 .main{
     background-color:rgb(240, 250, 255);
     border:lightgray;
@@ -19,23 +28,60 @@ h1{
     height:100%;
     overflow-wrap:break-word;
 }
-
+/* CSS for image container */
 .image-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 10px;
   }
   
+  /* CSS for individual image */
   .image {
+    position: relative;
     width: 100%;
-    height: auto;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  /* CSS for the image itself */
+  .image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* CSS for image overlay */
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
 
-.transcript{
-    padding-bottom:5px;
-    margin-top:5px;
-}
+  .image:hover {
+    filter: grayscale(70%);
+  }
 
-.card-title{
-    margin-top:5%;
-}
+  .image:hover .image-overlay {
+    opacity: 1;
+  }
+  
+  /* Additional CSS for responsiveness */
+  @media (max-width: 600px) {
+    .image-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
