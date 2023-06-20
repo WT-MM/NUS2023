@@ -10,6 +10,7 @@ __pycache__/
 # Project Specific
 
 SDEval/webapp/static/images/*.png
+!SDEval/webapp/static/images/
 
 # Distribution / packaging
 .Python
