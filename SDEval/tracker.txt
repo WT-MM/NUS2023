@@ -2,42 +2,42 @@
 
 Style
 
-1 - SD2.1, dalle, sdxl
-2 - SD2.1, dalle, sdxl
-3 - SD2.1, dalle
-4
+1 - SD2.1, dalle, sdxl, sd1.5, openjourney
+2 - SD2.1, dalle, sdxl, sd1.5, openjourney
+3 - SD2.1, dalle, sd1.5, openjourney
+4 - SD2.1, sd1.5, openjourney
 
 Perspective
 
-1 - SD2.1, dalle, sdxl
-2 - SD2.1, dalle, sdxl (only half)
-3 - SD2.1, dalle
-4
+1 - SD2.1, dalle, sdxl, sd1.5, openjourney
+2 - SD2.1, dalle, sdxl (only half), sd1.5, openjourney
+3 - SD2.1, dalle, sd1.5, openjourney
+4 - SD2.1, sd1.5, openjourney
 
 Creativity
 
-1 - SD2.1, dalle, sdxl
-2 - SD2.1, dalle
-3
-4
+1 - SD2.1, dalle, sdxl, sd1.5, openjourney
+2 - SD2.1, dalle, sd1.5, openjourney
+3 - SD2.1, sd1.5, openjourney
+4 - SD2.1, sd1.5, openjourney
 
 Beauty
 
-1 - SD2.1, dalle, sdxl
-2 - SD2.1, dalle
-3 - SD2.1
-4
+1 - SD2.1, dalle, sdxl, sd1.5
+2 - SD2.1, dalle, sd1.5
+3 - SD2.1, sd1.5
+4 - SD2.1, sd1.5
 
 Composition
 
-1 - SD2.1, dalle, sdxl
-2 - SD2.1, dalle
-3 - SD2.1
-4
+1 - SD2.1, dalle, sdxl, sd1.5
+2 - SD2.1, dalle, sd1.5
+3 - SD2.1, sd1.5
+4 - SD2.1, sd1.5
 
 Emotion
 
-1 - SD2.1, dalle, sdxl
-2 - SD2.1, dalle
-3 - SD2.1
-4
+1 - SD2.1, dalle, sdxl, sd1.5
+2 - SD2.1, dalle, sd1.5
+3 - SD2.1, sd1.5
+4 - SD2.1, sd1.5

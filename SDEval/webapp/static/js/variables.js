@@ -336,6 +336,486 @@ const images = [
         "src": "static/images/dalle2_style_3_4.png"
     },
     {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "1",
+        "src": "static/images/openjourney_creativity_1_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "1",
+        "src": "static/images/openjourney_creativity_1_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "1",
+        "src": "static/images/openjourney_creativity_1_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "1",
+        "src": "static/images/openjourney_creativity_1_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "2",
+        "src": "static/images/openjourney_creativity_2_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "2",
+        "src": "static/images/openjourney_creativity_2_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "2",
+        "src": "static/images/openjourney_creativity_2_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "2",
+        "src": "static/images/openjourney_creativity_2_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "3",
+        "src": "static/images/openjourney_creativity_3_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "3",
+        "src": "static/images/openjourney_creativity_3_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "3",
+        "src": "static/images/openjourney_creativity_3_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "3",
+        "src": "static/images/openjourney_creativity_3_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "4",
+        "src": "static/images/openjourney_creativity_4_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "4",
+        "src": "static/images/openjourney_creativity_4_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "4",
+        "src": "static/images/openjourney_creativity_4_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "creativity",
+        "prompt": "4",
+        "src": "static/images/openjourney_creativity_4_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "1",
+        "src": "static/images/openjourney_perspective_1_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "1",
+        "src": "static/images/openjourney_perspective_1_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "1",
+        "src": "static/images/openjourney_perspective_1_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "1",
+        "src": "static/images/openjourney_perspective_1_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "2",
+        "src": "static/images/openjourney_perspective_2_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "2",
+        "src": "static/images/openjourney_perspective_2_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "2",
+        "src": "static/images/openjourney_perspective_2_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "2",
+        "src": "static/images/openjourney_perspective_2_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "3",
+        "src": "static/images/openjourney_perspective_3_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "3",
+        "src": "static/images/openjourney_perspective_3_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "3",
+        "src": "static/images/openjourney_perspective_3_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "3",
+        "src": "static/images/openjourney_perspective_3_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "4",
+        "src": "static/images/openjourney_perspective_4_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "4",
+        "src": "static/images/openjourney_perspective_4_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "4",
+        "src": "static/images/openjourney_perspective_4_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "perspective",
+        "prompt": "4",
+        "src": "static/images/openjourney_perspective_4_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "1",
+        "src": "static/images/openjourney_style_1_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "1",
+        "src": "static/images/openjourney_style_1_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "1",
+        "src": "static/images/openjourney_style_1_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "1",
+        "src": "static/images/openjourney_style_1_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "2",
+        "src": "static/images/openjourney_style_2_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "2",
+        "src": "static/images/openjourney_style_2_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "2",
+        "src": "static/images/openjourney_style_2_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "2",
+        "src": "static/images/openjourney_style_2_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "3",
+        "src": "static/images/openjourney_style_3_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "3",
+        "src": "static/images/openjourney_style_3_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "3",
+        "src": "static/images/openjourney_style_3_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "3",
+        "src": "static/images/openjourney_style_3_4.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "4",
+        "src": "static/images/openjourney_style_4_1.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "4",
+        "src": "static/images/openjourney_style_4_2.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "4",
+        "src": "static/images/openjourney_style_4_3.png"
+    },
+    {
+        "model": "openjourney",
+        "category": "style",
+        "prompt": "4",
+        "src": "static/images/openjourney_style_4_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "1",
+        "src": "static/images/sd1.5_beauty_1_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "1",
+        "src": "static/images/sd1.5_beauty_1_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "1",
+        "src": "static/images/sd1.5_beauty_1_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "1",
+        "src": "static/images/sd1.5_beauty_1_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "2",
+        "src": "static/images/sd1.5_beauty_2_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "2",
+        "src": "static/images/sd1.5_beauty_2_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "2",
+        "src": "static/images/sd1.5_beauty_2_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "2",
+        "src": "static/images/sd1.5_beauty_2_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "3",
+        "src": "static/images/sd1.5_beauty_3_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "3",
+        "src": "static/images/sd1.5_beauty_3_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "3",
+        "src": "static/images/sd1.5_beauty_3_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "3",
+        "src": "static/images/sd1.5_beauty_3_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "4",
+        "src": "static/images/sd1.5_beauty_4_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "4",
+        "src": "static/images/sd1.5_beauty_4_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "4",
+        "src": "static/images/sd1.5_beauty_4_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "beauty",
+        "prompt": "4",
+        "src": "static/images/sd1.5_beauty_4_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "1",
+        "src": "static/images/sd1.5_composition_1_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "1",
+        "src": "static/images/sd1.5_composition_1_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "1",
+        "src": "static/images/sd1.5_composition_1_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "1",
+        "src": "static/images/sd1.5_composition_1_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "2",
+        "src": "static/images/sd1.5_composition_2_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "2",
+        "src": "static/images/sd1.5_composition_2_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "2",
+        "src": "static/images/sd1.5_composition_2_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "2",
+        "src": "static/images/sd1.5_composition_2_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "3",
+        "src": "static/images/sd1.5_composition_3_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "3",
+        "src": "static/images/sd1.5_composition_3_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "3",
+        "src": "static/images/sd1.5_composition_3_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "3",
+        "src": "static/images/sd1.5_composition_3_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "4",
+        "src": "static/images/sd1.5_composition_4_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "4",
+        "src": "static/images/sd1.5_composition_4_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "4",
+        "src": "static/images/sd1.5_composition_4_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "composition",
+        "prompt": "4",
+        "src": "static/images/sd1.5_composition_4_4.png"
+    },
+    {
         "model": "sd1.5",
         "category": "creativity",
         "prompt": "1",
@@ -430,6 +910,102 @@ const images = [
         "category": "creativity",
         "prompt": "4",
         "src": "static/images/sd1.5_creativity_4_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "1",
+        "src": "static/images/sd1.5_emotion_1_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "1",
+        "src": "static/images/sd1.5_emotion_1_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "1",
+        "src": "static/images/sd1.5_emotion_1_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "1",
+        "src": "static/images/sd1.5_emotion_1_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "2",
+        "src": "static/images/sd1.5_emotion_2_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "2",
+        "src": "static/images/sd1.5_emotion_2_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "2",
+        "src": "static/images/sd1.5_emotion_2_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "2",
+        "src": "static/images/sd1.5_emotion_2_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "3",
+        "src": "static/images/sd1.5_emotion_3_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "3",
+        "src": "static/images/sd1.5_emotion_3_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "3",
+        "src": "static/images/sd1.5_emotion_3_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "3",
+        "src": "static/images/sd1.5_emotion_3_4.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "4",
+        "src": "static/images/sd1.5_emotion_4_1.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "4",
+        "src": "static/images/sd1.5_emotion_4_2.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "4",
+        "src": "static/images/sd1.5_emotion_4_3.png"
+    },
+    {
+        "model": "sd1.5",
+        "category": "emotion",
+        "prompt": "4",
+        "src": "static/images/sd1.5_emotion_4_4.png"
     },
     {
         "model": "sd1.5",
