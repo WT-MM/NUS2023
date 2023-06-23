@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<style>
+    body {
+        text-align: center;
+        margin-top: 50px;
+    }
+    #image-container {
+        margin-bottom: 20px;
+    }
+    #rating-form {
+        display: inline-block;
+    }
+    #rating-input {
+        width: 50px;
+        margin-left: 10px;
+    }
+    #submit-button {
+        margin-left: 10px;
+    }
+</style>
+<script src="{{ url_for('static', filename='js/variables.js') }}"></script>
+<script>
+    function updateImage() {
+        console.log("HELP")
+        var image = document.getElementById('image');
+        var randSelection = images[Math.floor(Math.random() * images.length)];
+        var imageUrl = randSelection['src']
+        image.src = imageUrl;
+
+        var prompt = document.getElementById('prompt');
+        var promptText = promptLookup[randSelection['category']][randSelection['prompt']];
+        prompt.innerHTML = promptText;
+
+    }
+</script>
+<body onload="updateImage()">
+    <div class="container" style="margin-top: 0vh; margin-bottom: 3vh;">
+        <h1 class="text-center display-4">{% block title %} Image Evaluation {% endblock %}</h1>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="image-container" style="text-align: right;">
+                    <img id="image" alt="Image to Evaluate" style="max-height:60vh" class="img-fluid" src="static/images/loading.png">
+                </div>
+            </div>
+    
+            <div class="col-md-6" style="margin:top;"> 
+                <div id="text-container" style="text-align:left">
+                    <div style="font-size:xx-large;font-weight:300" id="prompt"></div>
+                </div>
+            </div>
+
+
+            
+        </div>
+        <div class="row">
+            <form id="rating-form" action="/evaluate" method="POST">
+
+                <div class="form-row" style=>
+                    <div class="col">
+                        <label for="rating-input" style="text-align: left;">Rate this image on appearance and accuracy to prompt (1-10):</label>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="number" id="rating-input" name="rating" class="form-control" min="1" max="10" required>
+                            <div class="input-group-append">
+                                <input type="submit" id="submit-button" class="" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+{% endblock %}

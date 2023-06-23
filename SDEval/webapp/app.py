@@ -7,6 +7,13 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/evaluate', methods=['POST', 'GET'])
+def evaluate():
+    if(request.method == 'POST'):
+        rating = int(request.form['rating'])
+
+    return render_template('evaluate.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):
