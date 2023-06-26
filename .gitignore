@@ -10,6 +10,7 @@ __pycache__/
 # Project Specific
 
 SDEval/webapp/static/images/*.png
+SDEval/input/*
 
 # Distribution / packaging
 .Python
