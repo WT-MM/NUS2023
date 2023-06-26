@@ -5,7 +5,7 @@ import json
 final = {}
 
 
-with open("raw.txt", "r", encoding="utf-8") as f:
+with open("data/raw.txt", "r", encoding="utf-8") as f:
     bigstring = f.read()
     #Strip newlines
     bigstring = bigstring.replace("\n", "")
@@ -20,5 +20,5 @@ with open("raw.txt", "r", encoding="utf-8") as f:
 
 print(final)
 
-with open("prompts.json", "w", encoding="utf-8") as f:
+with open("data/prompts.json", "w", encoding="utf-8") as f:
     json.dump(final, f, indent=4, ensure_ascii=False)

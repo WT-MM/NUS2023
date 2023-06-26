@@ -8,7 +8,7 @@ def getImages():
     return imageNames
 
 def loadPrompts():
-    with open("prompts.json", "r", encoding="utf-8") as f:
+    with open("data/prompts.json", "r", encoding="utf-8") as f:
         prompts = json.load(f)
     return prompts
 
@@ -35,6 +35,6 @@ for cat, prompt in prompts.items():
     enumerated = dict(enumerate(prompt,1))
     promptLookup[invertedPromptKey[cat]] = enumerated
 
-with open("variables.js", "w", encoding="utf-8") as f:
+with open("output/variables.js", "w", encoding="utf-8") as f:
     f.write("const images = " + json.dumps(jsVar, indent=4, ensure_ascii=False) + "\n")
     f.write("const promptLookup = " + json.dumps(promptLookup, indent=4, ensure_ascii=False) + "\n")

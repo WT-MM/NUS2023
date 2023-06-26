@@ -35,6 +35,9 @@
         var promptText = promptLookup[randSelection['category']][randSelection['prompt']];
         prompt.innerHTML = promptText;
 
+        var imageId = document.getElementById('image-id');
+        imageId.value = randSelection['src'].split('/')[2].slice(0, -4);
+
     }
 </script>
 <body onload="updateImage()">
@@ -63,14 +66,23 @@
             <form id="rating-form" action="/evaluate" method="POST">
 
                 <div class="form-row" style=>
-                    <div class="col">
-                        <label for="rating-input" style="text-align: left;">Rate this image on appearance and accuracy to prompt (1-10):</label>
-                    </div>
-                    <div class="col">
-                        <div class="input-group">
-                            <input type="number" id="rating-input" name="rating" class="form-control" min="1" max="10" required>
-                            <div class="input-group-append">
-                                <input type="submit" id="submit-button" class="" value="Submit">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label class="mmlabel" for="appearance-rating" style="text-align: left;">Rate the image on appearance (1-10):</label>
+                                <div class="input-group">
+                                    <input type="number" id="appearance-rating" name="appearance" class="form-control" min="1" max="10" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label class="mmlabel" for="accuracy-rating" style="text-align: left;">Rate the image on accuracy to prompt (1-10):</label>
+                                <div class="input-group">
+                                    <input type="number" id="accuracy-rating" name="accuracy" class="form-control" min="1" max="10" required>
+                                    <div class="input-group-append">
+                                        <input type="submit" id="submit-button" class="" value="Submit">
+                                    </div>
+                                    <input type="hidden" id="image-id" name="image_id" value="">
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -7,21 +7,13 @@ import mplcursors
 
 
 
-
-def loadPrompts():
-    with open("prompts.json", "r", encoding="utf-8") as f:
-        prompts = json.load(f)
-    return prompts
-
 promptKey = {"style": "Style Consistency", "perspective" : "Perspective", "creativity" : "Creativity", "beauty" : "Beauty", "composition" : "Composition", "emotion" : "Emotional Expression"}
 invertedPromptKey = {v: k for k, v in promptKey.items()}
 
-prompts = loadPrompts()
-
-df = pd.read_csv('labels.csv')
+df = pd.read_csv('data/labels.csv')
 
 # Load the prompts JSON
-with open('prompts.json') as file:
+with open('data/prompts.json') as file:
     prompts = json.load(file)
 
 

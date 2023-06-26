@@ -70,6 +70,10 @@ h1{
     transition: opacity 0.3s ease-in-out;
   }
 
+  .mmlabel{
+    padding-bottom:1vh;
+  }
+
   .image:hover {
     filter: grayscale(70%);
   }
