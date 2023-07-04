@@ -25,7 +25,10 @@ for file in getImages():
     filePath = relFilePath + file
     #name = file.split(".")[0] #doesn't work because of . in version
     name = file[:-3] #Will only work if file extension is 3 characters long
-    model, cat, num, _ = name.split("_")
+    model, cat, num, *_ = name.split("_")
+    if(len(_)>1):
+        print(f"Too long: {_}")
+        continue #Figure out if this is a problem (could be unbalanced?)
     jsVar.append({"model": model, "category": cat, "prompt": num, "src": filePath})
 
 # Generate prompt lookup

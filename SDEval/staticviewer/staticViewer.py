@@ -47,7 +47,7 @@ def generateHTML(dataIndices=[0,1,2], dataLabels=['Model', 'Style', 'Prompt']):
         # Create the overlay div element
         overlayElement = template.new_tag('div')
         overlayElement['class'] = 'image-overlay'
-        overlayElement.string = str({label: overlayData[i][j] for j, label in zip(dataIndices, dataLabels)})
+        overlayElement.string = str({label: overlayData[i][j] for j, label in enumerate(dataLabels)})
 
         # Append the img element and overlay element to the image wrapper
         imageWrapper.append(imgElement)
@@ -66,5 +66,9 @@ def generateHTML(dataIndices=[0,1,2], dataLabels=['Model', 'Style', 'Prompt']):
 def stepsEval():
     generateHTML(dataIndices=[0,1,2,3], dataLabels=['Model', 'Style', 'Prompt', 'Steps'])
 
+def schedulerEval():
+    generateHTML(dataIndices=[3,5], dataLabels=['Steps', 'Scheduler'])
+
 if __name__ == '__main__':
-    stepsEval()
+    #stepsEval()
+    schedulerEval()

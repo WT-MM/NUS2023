@@ -3,7 +3,6 @@ import pandas as pd
 import json
 import matplotlib.patches as mpatches
 import numpy as np
-import mplcursors
 
 
 
@@ -61,22 +60,83 @@ for model, data in modelData.items():
     print(f"Mean Weight: {np.mean(data['weight'])}")
     print("-----")
 
-for style, models in styleData.items():
-    print(style)
-    for model, data in models.items():
-        print(model)
-        print(f"Mean Dist: {np.mean(data['dist'])}")
-        print(f"Mean Weight: {np.mean(data['weight'])}")
-        print("-----")
-    print("-----")
+humanData = {}
+humanPrompts = ['style_2', 'perspective_2', 'perspective_3', 'beauty_1', 'emotion_3', 'emotion_4']
+nonHumanData = {}
+# Basically modelData but with subsets of styles
+for index, row in df.iterrows():
+    weights = eval(row['Weights'])
+    labels = eval(row['Labels'])
 
-print(styleData)
+    fileInfo = row['File'][:-3].split("_")
+    realLabel = prompts[promptKey[fileInfo[1]]][int(fileInfo[2])-1]
 
-data = styleData
+    combined = dict(zip(labels, weights))
+    realWeight = combined[realLabel]
 
+    if not humanData.get(fileInfo[0]):
+        humanData[fileInfo[0]] = {"dist" : [], "weight": []}
+
+    if not nonHumanData.get(fileInfo[0]):
+        nonHumanData[fileInfo[0]] = {"dist" : [], "weight": []}
+
+    if(f'{fileInfo[1]}_{fileInfo[2]}' in humanPrompts):
+        humanData[fileInfo[0]]['dist'].append(realWeight - weights[1] if realWeight == weights[0] else realWeight - weights[0])
+        humanData[fileInfo[0]]['weight'].append(realWeight)
+    else:
+        nonHumanData[fileInfo[0]]['dist'].append(realWeight - weights[1] if realWeight == weights[0] else realWeight - weights[0])
+        nonHumanData[fileInfo[0]]['weight'].append(realWeight)
+
+
+plt.rcParams['figure.figsize'] = 12,8
+
+
+
+def boxplot(mmdata, title, show=True, save=True, name="boxplot.png"):
+    weights_data = [model_data['weight'] for model_data in mmdata.values()]
+
+    # Create a figure and axis objects
+    fig, ax = plt.subplots()
+
+    # Create the box plot
+    box_plot = ax.boxplot(weights_data)
+
+    # Set the labels for x-axis and y-axis
+    ax.set_xticklabels(mmdata.keys())
+    ax.set_ylabel('Similarity')
+
+    ax.set_ybound(0.2,0.5)
+
+    # Set the title for the plot
+    ax.set_title(title)
+
+    # Add labels to the median and quartiles
+    medians = [np.median(weight_data) for weight_data in weights_data]
+    q1 = [np.percentile(weight_data, 25) for weight_data in weights_data]
+    q3 = [np.percentile(weight_data, 75) for weight_data in weights_data]
+
+    for i, box in enumerate(box_plot['medians']):
+        y = box.get_ydata()[0]
+        ax.text(i+1, y, f'{medians[i]:.3f}', ha='center', va='bottom', fontsize=8)
+
+    for i, box in enumerate(box_plot['boxes']):
+        y_bottom = box.get_ydata()[0]
+        y_top = box.get_ydata()[2]
+        ax.text(i+1, y_bottom, f'{q1[i]:.3f}', ha='center', va='bottom', fontsize=8)
+        ax.text(i+1, y_top-0.001, f'{q3[i]:.3f}', ha='center', va='top', fontsize=8)
+    if(save): plt.savefig(f'output/{name}')
+    if(show): plt.show()
+
+plt.tight_layout()
+boxplot(modelData, "Similarity Distribution for Models (all images)", show=False, name='totalBoxPlot.png')
+boxplot(humanData, "Similarity Distribution for Models (human images)", show=False, name='humanBoxPlot.png')
+boxplot(nonHumanData, "Similarity Distribution for Models (Non-human images)", show=False, name='nonHumanBoxPlot.png')
+
+
+
+
+'''
 plt.rcParams.update({'font.size': 8})
-
-
 
 models = list(set(model for styles in data.values() for model in styles.keys()))
 styles = list(data.keys())
@@ -146,6 +206,8 @@ for model in models:
 
 #plt.tight_layout()
 #plt.show()
+'''
+
 
 '''
 #For overlaid plots

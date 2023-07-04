@@ -11,6 +11,7 @@ __pycache__/
 
 SDEval/webapp/static/images/*.png
 SDEval/input/*
+LLMEval/elo-interface/.env.local
 
 # Distribution / packaging
 .Python
