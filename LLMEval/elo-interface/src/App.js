@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { app } from './firebase';
-import { doc, getFirestore, setDoc, getDoc} from "firebase/firestore";
+import { doc, collection, getFirestore, setDoc, getDoc, getDocs, query} from "firebase/firestore";
 import { v4 as uuidv4 } from 'uuid';
 import LLMOutput from './LLMOutput'
 
@@ -11,6 +11,7 @@ import LLMOutput from './LLMOutput'
 
 
 function App() {
+
   const [sessionId, setSessionId] = useState('');
   const [caption, setCaption] = useState('');
   const [outputs, setOutputs] = useState([]);
@@ -29,7 +30,7 @@ function App() {
     };
   }, []);
 
-  const handleOptionSelect = async (winner, loser) => {
+  const handleOptionSelect = async (winner, loser, prompt) => {
     console.log(sessionId)
     const docRef = doc(db, 'test',sessionId)
     const docInfo = await getDoc(docRef);
@@ -37,20 +38,25 @@ function App() {
       console.log("No such document!");
       setDoc(doc(db, 'test',sessionId), {
         'winner': [winner],
-        'loser': [loser]
+        'loser': [loser],
+        'prompt': [prompt]
       });
     }else{
       var newData = docInfo.data();
-      console.log(newData)
-      console.log(newData['winner'])
       newData['winner'].push(winner);
       newData['loser'].push(loser);
+      newData['prompt'].push(prompt);
       setDoc(doc(db, 'test',sessionId), newData);
     }
 
     getOptions()
 
   };
+
+  var randomEntry = function (obj) {
+    var keys = Object.keys(obj);
+    return obj[keys[ keys.length * Math.random() << 0]];
+};
 
   const generateSessionId = () => {
     const sessionId = uuidv4().replace(/\\/g, '');
@@ -62,25 +68,38 @@ function App() {
   };
 
   const getOptions = async () => {
+
+    const collectionRef = collection(db, 'data')
+    const querySnapshot = await getDocs(query(collectionRef))
+
+    const randomPrompt = randomEntry(querySnapshot.docs)
+    const randData = randomPrompt.data()
+    let randOne = Math.floor(Math.random() * randData['response'].length);
+    let randTwo = Math.floor(Math.random() * randData['response'].length);
+    while (randOne === randTwo){
+      randTwo = Math.floor(Math.random() * randData['response'].length);
+    }
+
     const docData = await getDoc(doc(db, 'data','mm'))
     const data = docData.data();
-    const option1 = {'model': 's', 'prompt': 's', 'output': 's'}
-    const option2 = {'model': 's', 'prompt': 's', 'output': 's'}
+    const option1 = {'model': randData['model'][randOne], 'other': randData['model'][randTwo],'prompt': randomPrompt.id, 'output': randData['response'][randOne]}
+    const option2 = {'model': randData['model'][randTwo], 'other': randData['model'][randOne], 'prompt': randomPrompt.id, 'output': randData['response'][randTwo]}
 
-    setCaption('m')
+    setCaption(randomPrompt.id)
 
     setOutputs([option1, option2])
   };
   
 
 return (
-  <div className="App">
-    <h1>Which option is better?</h1>
-    <p>{caption}</p>
-    <div>
+  <div className="App" style={{padding:"1rem"}}>
+    <div class="bigtext">Which response is better?</div>
+    <div class="bigishtext">{caption}</div>
+    <div class="stuffContainer">
       {outputs.map((option) => (
         <LLMOutput
           model={option.model}
+          other={option.other}
           prompt={option.prompt}
           output={option.output}
           onSelect={handleOptionSelect}
