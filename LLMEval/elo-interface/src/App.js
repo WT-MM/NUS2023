@@ -5,11 +5,6 @@ import Main from './mainPage';
 import Layout from './layout';
 import StatsPage from './statsPage';
 
-
-
-
-
-
 function App() {
 
   return (
