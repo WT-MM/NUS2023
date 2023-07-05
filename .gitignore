@@ -12,6 +12,7 @@ __pycache__/
 SDEval/webapp/static/images/*.png
 SDEval/input/*
 LLMEval/elo-interface/.env.local
+LLMEval/firebaseConfig.json
 
 # Distribution / packaging
 .Python
