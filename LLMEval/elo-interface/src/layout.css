@@ -1,0 +1,90 @@
+.layout {
+    display: flex;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position:fixed;
+    top:2%;
+    left:1%;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10; /* Ensure the hamburger icon is positioned above the menu */
+  }
+  
+  .line {
+    width: 100%;
+    height: 2.1px;
+    border-radius: 5px;
+    background-color: #333;
+    transition: 0.3s ease;
+  }
+  
+  .line.open:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  
+  .line.open:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .line.open:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+  
+  .logo-link {
+    margin-right: auto;
+    text-decoration: none;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 0;
+    background-color: #f8f8f8;
+    transition: width 0.3s ease;
+    z-index: 9; /* Ensure the menu is positioned below the hamburger icon */
+    overflow-y: auto;
+  }
+  
+  .side-menu.open {
+    width: 250px;
+  }
+  
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+    justify-content: center; /* Align links to the center vertically */
+    align-items: center; /* Align links to the center horizontally */
+  }
+  
+  .menu-links.open {
+    transform: translateX(0);
+  }
+  
+  .menu-links a {
+    text-decoration: none;
+    color: #333;
+  }
+  
