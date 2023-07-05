@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { app } from './firebase';
-import { doc, collection, getFirestore, setDoc, getDoc, getDocs, query} from "firebase/firestore";
+import { doc, collection, getFirestore, setDoc, addDoc, serverTimestamp, getDoc, getDocs, query} from "firebase/firestore";
 import { v4 as uuidv4 } from 'uuid';
 import LLMOutput from './LLMOutput'
-import { BrowserRouter, Route, Link, Routes, Switch} from 'react-router-dom';
-import StatsPage from './statsPage';
 
 
 const Main = () => {
@@ -28,23 +26,13 @@ const Main = () => {
     }, []);
   
     const handleOptionSelect = async (winner, loser, prompt) => {
-      console.log(sessionId)
-      const docRef = doc(db, 'test',sessionId)
-      const docInfo = await getDoc(docRef);
-      if (!docInfo.exists()) {
-        console.log("No such document!");
-        setDoc(doc(db, 'test',sessionId), {
-          'winner': [winner],
-          'loser': [loser],
-          'prompt': [prompt]
-        });
-      }else{
-        var newData = docInfo.data();
-        newData['winner'].push(winner);
-        newData['loser'].push(loser);
-        newData['prompt'].push(prompt);
-        setDoc(doc(db, 'test',sessionId), newData);
-      }
+
+      await addDoc(collection(db, 'test'), {
+        'winner': winner,
+        'loser': loser,
+        'prompt': prompt,
+        'timestamp': serverTimestamp()
+    });
   
       getOptions()
   
