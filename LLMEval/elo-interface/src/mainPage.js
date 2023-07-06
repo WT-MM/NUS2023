@@ -31,7 +31,8 @@ const Main = () => {
         'winner': winner,
         'loser': loser,
         'prompt': prompt,
-        'timestamp': serverTimestamp()
+        'timestamp': serverTimestamp(),
+        'session': sessionId
     });
   
       getOptions()

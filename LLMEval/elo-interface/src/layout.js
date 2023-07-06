@@ -31,9 +31,8 @@ const Layout = () => {
             </Link>
           </div>
         </div>
-        <div className="content">
-          <Outlet />
-        </div>
+        <Outlet />
+
       </div>
     );
   };

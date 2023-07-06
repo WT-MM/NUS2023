@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width:100vw;
+  height:100vh;
 }
 
 .options {
@@ -19,6 +21,26 @@
   margin-bottom: 2vh;
   font-size: 2.5em;
   font-weight: 300;
+}
+
+.plotTitle{
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.plotContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.plot{
+  width: 50%;
+  height: 50%;
 }
 
 .textOutput {

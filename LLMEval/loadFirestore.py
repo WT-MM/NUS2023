@@ -24,7 +24,7 @@ def set_data(collection, document, data):
     doc_ref = db.collection(collection).document(document)
     doc_ref.set(data)
 
-def exportData():
+def exportData(wantedCollection=None):
     # Export all data from Firestore
 
     dataJson = {}
@@ -34,6 +34,10 @@ def exportData():
 
     # Loop through all collections
     for collection in collections:
+
+        if wantedCollection and collection.id != wantedCollection:
+            continue
+
         # Get all documents in collection
         documents = collection.stream()
 
@@ -41,14 +45,12 @@ def exportData():
         for document in documents:
             # Get data from document
             data = document.to_dict()
+            data['timestamp'] = data['timestamp'].timestamp()
             # Add document data to JSON
             if collection.id not in dataJson:
                 dataJson[collection.id] = {}
             dataJson[collection.id][document.id] = data
-
-    # Write JSON to file
-    with open('firestore-export.json', 'w') as outfile:
-        json.dump(dataJson, outfile, indent=4)
+    return dataJson
     
 
 # Import data to Firestore, data should be a JSON object
@@ -59,3 +61,9 @@ def importData(data):
         for document in data[collection]:
             # Set document data
             set_data(collection, document, data[collection][document])
+
+mm = exportData(wantedCollection="test")
+
+with open("test.json", "w") as f:
+    json.dump(mm, f)
+
