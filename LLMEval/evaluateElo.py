@@ -121,6 +121,14 @@ def visualize_bootstrap_scores(df, title):
     fig.update_layout(xaxis_title="Model", yaxis_title="Rating")
     return fig
 
+
+def get_bootstrap_result(battles, func_compute_elo, num_round):
+    rows = []
+    for i in tqdm(range(num_round), desc="bootstrap"):
+        rows.append(func_compute_elo(battles.sample(frac=1.0, replace=True)))
+    df = pd.DataFrame(rows)
+    return df[df.median().sort_values(ascending=False).index]
+
 def sample_battle_even(matches, n_per_match):
     groups = matches.groupby(["winner", "loser"], as_index=False)
     resampled = (groups
@@ -141,12 +149,21 @@ num_samples = 50
 print("number of samples per battle pair:", num_samples)
 bootstrap_even_lu = get_bootstrap_even_sample(matches, num_samples, compute_elo)
 
-bootstrap = visualize_bootstrap_scores(bootstrap_even_lu, f"Bootstrap of Elo Estimates - Even sample")
+BOOTSTRAP_ROUNDS = 1000
+
+bootstrap_elo_lu = get_bootstrap_result(matches, compute_elo, BOOTSTRAP_ROUNDS)
+bootstrap_lu_median = bootstrap_elo_lu.median().reset_index().set_axis(["model", "rating"], axis=1)
+
+bootstrapsample = visualize_bootstrap_scores(bootstrap_even_lu, f"Bootstrap of Elo Estimates - Even sample")
+bootstrap = visualize_bootstrap_scores(bootstrap_elo_lu, f"Bootstrap of Elo Estimates - All battles")
+
 winRate = win_rate_matchup(matches)
 numMatches = num_matches()
 straightElo = visualize_elo_scores(compute_elo(matches), "Elo Scores (Linear)")
 proportionalWin = proportional_wins(matches)
 
+
+bootstrapsample.write_html("./elo-interface/public/plots/bootstrapsample.html", include_plotlyjs="cdn", full_html=False)
 bootstrap.write_html("./elo-interface/public/plots/bootstrap.html", include_plotlyjs="cdn", full_html=False)
 winRate.write_html("./elo-interface/public/plots/winRate.html", include_plotlyjs="cdn", full_html=False)
 numMatches.write_html("./elo-interface/public/plots/numMatches.html", include_plotlyjs="cdn", full_html=False)

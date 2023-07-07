@@ -4,14 +4,13 @@ const PlotContainer = () => {
     const dir = 'plots';
 
     const fileNames = ["bootstrap.html", 'numMatches.html', 'winRate.html', 'straightElo.html', 'proportionalWin.html']
-
+//<div class="plotTitle">{fileName.split(".")[0]}</div>
 
   return (
     <div class="plotContainer">
       {fileNames.map((fileName, index) => (
         <div class="plot" key={index}>
-          <div class="plotTitle">{fileName.split(".")[0]}</div>
-          <iframe height="500px" width="500px" src={`/plots/${fileName}`} title={fileName.split(".")[0]} />
+          <iframe class="mmframe" src={`/plots/${fileName}`} title={fileName.split(".")[0]} />
         </div>
       ))}
     </div>

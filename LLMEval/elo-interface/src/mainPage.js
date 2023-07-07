@@ -4,6 +4,7 @@ import { app } from './firebase';
 import { doc, collection, getFirestore, setDoc, addDoc, serverTimestamp, getDoc, getDocs, query} from "firebase/firestore";
 import { v4 as uuidv4 } from 'uuid';
 import LLMOutput from './LLMOutput'
+import Google from './images/google.png'
 
 
 const Main = () => {
@@ -52,6 +53,10 @@ const Main = () => {
     const cleanupSessionData = (sessionId) => {
       //Do something i guess
     };
+
+    const loadSearch = () => {
+      window.open("https://www.google.com/search?q=" + caption, "_blank")
+    }
   
     const getOptions = async () => {
   
@@ -62,12 +67,14 @@ const Main = () => {
       const randData = randomPrompt.data()
       let randOne = Math.floor(Math.random() * randData['response'].length);
       let randTwo = Math.floor(Math.random() * randData['response'].length);
-      while (randOne === randTwo){
+
+      
+      while (randData['model'][randOne] === randData['model'][randTwo]){
         randTwo = Math.floor(Math.random() * randData['response'].length);
       }
   
-      const docData = await getDoc(doc(db, 'data','mm'))
-      const data = docData.data();
+      //const docData = await getDoc(doc(db, 'data','mm'))
+      //const data = docData.data();
       const option1 = {'model': randData['model'][randOne], 'other': randData['model'][randTwo],'prompt': randomPrompt.id, 'output': randData['response'][randOne]}
       const option2 = {'model': randData['model'][randTwo], 'other': randData['model'][randOne], 'prompt': randomPrompt.id, 'output': randData['response'][randTwo]}
   
@@ -80,7 +87,13 @@ const Main = () => {
     return (
         <div className="App" style={{ padding: '1rem' }}>
           <div class="bigtext">Which response is better?</div>
-          <div class="bigishtext">{caption}</div>
+          <div class="promptContainer">
+            <div class="bigishtext">{caption}</div>
+            <div class="googleContainer" onClick={loadSearch}>
+              <img width="15px" height="auto" src={Google} alt="Google" class="googleImg" />
+              <a class="googleText">oogle it</a>
+            </div>
+          </div>
           <div class="stuffContainer">
             {outputs.map((option) => (
               <LLMOutput
