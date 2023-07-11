@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button, View, Text, StyleSheet, Alert } from 'react-native';
 
+import { auth } from '../firebase';
+
 const GameScreen = () => {
     const [num1, setNum1] = useState(0);
     const [num2, setNum2] = useState(0);
@@ -10,6 +12,7 @@ const GameScreen = () => {
     }, []);
 
     const generateRandomNumbers = () => {
+        console.log(auth.currentUser)
         setNum1(Math.floor(Math.random() * 100));
         setNum2(Math.floor(Math.random() * 100));
     }
