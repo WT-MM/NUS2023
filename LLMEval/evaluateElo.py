@@ -127,6 +127,8 @@ def get_bootstrap_result(battles, func_compute_elo, num_round):
     for i in tqdm(range(num_round), desc="bootstrap"):
         rows.append(func_compute_elo(battles.sample(frac=1.0, replace=True)))
     df = pd.DataFrame(rows)
+    print(df)
+    print(df[df.median().sort_values().index])
     return df[df.median().sort_values(ascending=False).index]
 
 def sample_battle_even(matches, n_per_match):

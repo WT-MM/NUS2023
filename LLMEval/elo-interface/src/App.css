@@ -52,11 +52,12 @@
 .googleContainer{
   margin-left:10px;
   position:relative;
+  bottom:-2px;
   font-size:0.7em;
   border-style:solid;
   border-width:2px;
   border-radius:5px;
-  border-color: rgb(174, 179, 179);
+  border-color: rgb(193, 202, 202);
   padding:5px;
   margin-bottom:5px;
 }
@@ -68,9 +69,13 @@
 }
 
 .googleText{
-  font-size:1em;
+  font-size:1.4em;
   position:relative;
   top:-3px;
+
+  /*Delete if something*/
+  font-weight:400;
+  color:rgb(60, 26, 36);
 }
 
 .plot{
@@ -123,8 +128,9 @@
   }
 
   .plotContainer{
-    padding-left:8vw;
+    padding-left:10vw;
     padding-right:8vw;
+    
   }
 
   .mM:last-child{
@@ -141,7 +147,10 @@
 
   .bigtext {
     font-size: 2em;
+    margin-top:4vh;
   }
+
+  
   .bigishtext {
     font-size: 1.5em;
   }

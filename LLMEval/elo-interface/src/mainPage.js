@@ -83,6 +83,7 @@ const Main = () => {
       setOutputs([option1, option2])
     };
     
+    //<img width="15px" height="auto" src={Google} alt="Google" class="googleImg" />
   
     return (
         <div className="App" style={{ padding: '1rem' }}>
@@ -90,8 +91,7 @@ const Main = () => {
           <div class="promptContainer">
             <div class="bigishtext">{caption}</div>
             <div class="googleContainer" onClick={loadSearch}>
-              <img width="15px" height="auto" src={Google} alt="Google" class="googleImg" />
-              <a class="googleText">oogle it</a>
+              <a class="googleText"><a style={{fontSize:"1.5em",fontWeight:"620",background:"-webkit-linear-gradient(#e79e9e, #6a6adc)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", color:"rgb(121, 101, 223)"}}>G</a>oogle it</a>
             </div>
           </div>
           <div class="stuffContainer">

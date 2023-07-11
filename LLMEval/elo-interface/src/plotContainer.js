@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const PlotContainer = () => {
     const dir = 'plots';
 
-    const fileNames = ["bootstrap.html", 'numMatches.html', 'winRate.html', 'straightElo.html', 'proportionalWin.html']
+    const fileNames = ["bootstrap.html", 'numMatches.html', 'winRate.html', 'straightElo.html', 'proportionalWin.html']//, 'bootstrapsample.html']
 //<div class="plotTitle">{fileName.split(".")[0]}</div>
 
   return (

@@ -29,6 +29,9 @@ const Layout = () => {
             <Link to="/stats" onClick={handleLinkClick}>
               Stats
             </Link>
+            <Link to="/mmm" onClick={handleLinkClick}>
+              mmm
+            </Link>
           </div>
         </div>
         <Outlet />
