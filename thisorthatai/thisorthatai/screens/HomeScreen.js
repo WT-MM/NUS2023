@@ -12,42 +12,13 @@ const HomeScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  useEffect(() => {
-    console.log(auth.currentUser)
-    if (auth.currentUser) {
-        navigation.navigate('Game');
-    }
-    }, []);
-
-  const provider = new GoogleAuthProvider();
-
-  const handleSignUp = () => {
-    signInWithPopup(auth, provider)
-    .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      const email = error.customData.email;
-      const credential = GoogleAuthProvider.credentialFromError(error);
-    }).then(() => {
-        console.log(auth.currentUser)
-        navigation.navigate('Game');
-        }
-    );
-  };
-
   return (
     <View style={styles.container}>
       <View style={styles.box}>
         <Text style={styles.toptitle}>Welcome To</Text>
         <Text style={styles.title}>This or That (AI Edition)</Text>
-        <Button style={{paddingBottom:"2vh"}} title="Play with Pics"  onPress={() => {navigation.navigate('Game')}}></Button>
-        <Button title="Play with Paragraphs" onPress={handleSignUp} />
+        <Button style={{paddingBottom:"2vh"}} title="Play with Pics"  onPress={() => {navigation.navigate('Pic Or Not')}}></Button>
+        <Button title="Play with Paragraphs" onPress={() => {navigation.navigate('Game')}} />
       </View>
     </View>
   );

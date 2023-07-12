@@ -1,4 +1,8 @@
-File naming scheme: model_style_promptNumber_steps_cfg__scheduler_copyNum.png
+File naming scheme: model_style_promptNumber_steps_cfg_scheduler_copyNum.png
+
+
+Focus on furniture
+
 
 Style
 

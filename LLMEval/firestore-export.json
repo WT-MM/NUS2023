@@ -1,7 +1,30 @@
 {
     "test": {
-        "0HQbac6LWIDJyd65iOGo": {
-            "prompt": "What are the benefits of regular exercise?",
-            "winner": "itsamodel",
-            "loser": "isthisamodel",
-            "timestamp": 
+        "934319fb-3c6b-4b3d-abd6-231cea754d49": {
+            "winner": [
+                "option1",
+                "option2",
+                "option1"
+            ],
+            "loser": [
+                3,
+                3,
+                3
+            ]
+        },
+        "9e905e71-ae33-413e-aec6-b25f73f31686": {
+            "winner": [
+                "option1",
+                "option2",
+                "option1",
+                "option2"
+            ],
+            "loser": [
+                3,
+                3,
+                3,
+                3
+            ]
+        }
+    }
+}

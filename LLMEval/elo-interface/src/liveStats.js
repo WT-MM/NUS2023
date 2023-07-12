@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { collection, getDocs, query, getFirestore } from "firebase/firestore";
 import { app } from "./firebase";
 import * as EloEval from "./eloEval";
-import * as Data from "./data.js";
+import * as Data from "./testData.js";
 
 const LiveStats = () => {
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, Alert } from 'react-native';
-import { Card, Dialog } from 'react-native-elements';
+import { View, Text, Button } from 'react-native';
+import { Dialog } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { Avatar } from 'react-native-elements';
@@ -10,7 +10,7 @@ import { auth } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 
 import HomeScreen from './screens/HomeScreen';
-import GameScreen from './screens/GameScreen';
+import ImageGameScreen from './screens/ImageGameScreen';
 import LoginScreen from './screens/LoginScreen';
 
 const AppNavigator = createStackNavigator();
@@ -42,6 +42,9 @@ function HeaderRight({ user }) {
   };
 
   if (user) {
+    if(user.photoURL == null){
+      user.photoURL = "https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
+    }
     return (
       <View style={{ paddingRight: 10 }}>
         <TouchableOpacity onPress={showDialog}>
@@ -54,7 +57,7 @@ function HeaderRight({ user }) {
         </TouchableOpacity>
         <Dialog style={{width:"10vw"}} isVisible={dialogVisible}>
           <View style={{}}>
-            <Text style={{textAlign:"center",fontSize:30,fontWeight:300,marginBottom:20}}>Are you sure you want to Log out?</Text>
+            <Text style={{textAlign:"center",fontSize:30,fontWeight:300,marginBottom:20}}>Are you sure you want to log out?</Text>
               <Button title="Log out" onPress={handleLogout} />
               <br style={{marginTop:"10"}}></br>
               <Button title="Cancel" onPress={handleCancel} />
@@ -102,8 +105,8 @@ export default function App() {
             }}
           />
           <AppNavigator.Screen 
-            name="Game" 
-            component={GameScreen} 
+            name="Pic Or Not" 
+            component={ImageGameScreen} 
             options={{
               headerRight: () => <HeaderRight user={user} />,
             }}

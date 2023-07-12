@@ -127,8 +127,6 @@ def get_bootstrap_result(battles, func_compute_elo, num_round):
     for i in tqdm(range(num_round), desc="bootstrap"):
         rows.append(func_compute_elo(battles.sample(frac=1.0, replace=True)))
     df = pd.DataFrame(rows)
-    print(df)
-    print(df[df.median().sort_values().index])
     return df[df.median().sort_values(ascending=False).index]
 
 def sample_battle_even(matches, n_per_match):
@@ -165,7 +163,7 @@ straightElo = visualize_elo_scores(compute_elo(matches), "Elo Scores (Linear)")
 proportionalWin = proportional_wins(matches)
 
 
-bootstrapsample.write_html("./elo-interface/public/plots/bootstrapsample.html", include_plotlyjs="cdn", full_html=False)
+#bootstrapsample.write_html("./elo-interface/public/plots/bootstrapsample.html", include_plotlyjs="cdn", full_html=False)
 bootstrap.write_html("./elo-interface/public/plots/bootstrap.html", include_plotlyjs="cdn", full_html=False)
 winRate.write_html("./elo-interface/public/plots/winRate.html", include_plotlyjs="cdn", full_html=False)
 numMatches.write_html("./elo-interface/public/plots/numMatches.html", include_plotlyjs="cdn", full_html=False)

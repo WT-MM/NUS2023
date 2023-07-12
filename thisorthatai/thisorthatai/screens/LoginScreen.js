@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button } from 'react-native';
 
 import { auth } from '../firebase';
 
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -34,12 +34,42 @@ const LoginScreen = ({ navigation }) => {
   const handleLogin = () => {
     // Perform login actions here
     // For example, you can check the credentials and navigate to the home screen if they are valid
-    if (username === 'admin' && password === 'password') {
+    signInWithEmailAndPassword(auth, username, password)
+    .then(() => {
       navigation.navigate('Home');
-    } else {
-      // Handle invalid credentials
-      alert('Invalid username or password');
-    }
+      // ...
+    })
+    .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode)
+            if(errorCode == 'auth/invalid-email' ){
+                window.alert("Invalid email - please try again")
+            }else if(errorCode == 'auth/user-not-found'){
+                createUserWithEmailAndPassword(auth, username, password).then((userCredential) => {
+                    navigation.navigate('Home');
+                    }).catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        if(errorCode == 'auth/invalid-email' ){
+                            window.alert("Invalid email - please try again")
+                        }else if(errorCode == 'auth/weak-password'){
+                            window.alert("Weak password - please try again (password must be at least 6 characters)")
+                        }else{
+                            window.alert("Unknown error - please try again")
+                        }
+                    }
+                );
+
+            }else if(errorCode == 'auth/wrong-password'){
+                window.alert("Incorrect password - please try again")
+            }else if(errorCode == 'auth/user-not-found'){
+                window.alert("User not found - please try again")
+            }else{
+                window.alert("Unknown error - please try again")
+            }
+
+    });    
   };
 
   return (

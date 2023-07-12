@@ -1,0 +1,13 @@
+
+Format of output files would probably be
+
+model.csv - 
+prompt, response
+prompt, response
+...
+
+
+
+Firestore configuration should be
+
+collection: data | document: prompt | model: [], response: []
