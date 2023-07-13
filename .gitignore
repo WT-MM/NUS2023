@@ -15,6 +15,7 @@ LLMEval/elo-interface/.env.local
 thisorthatai/thisorthatai/.env
 LLMEval/firebaseConfig.json
 thisorthatai/firebaseCreds.json
+LLMEval/.env
 
 # Distribution / packaging
 .Python
