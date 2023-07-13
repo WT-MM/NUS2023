@@ -3,10 +3,13 @@ import { View, Text, StyleSheet, Alert, Image, TouchableOpacity } from 'react-na
 import * as Animatable from 'react-native-animatable';
 import {Dimensions} from 'react-native';
 import { serverTimestamp, addDoc, collection } from 'firebase/firestore';
+import { ref, listAll } from 'firebase/storage';
 
-import { db, auth } from '../firebase';
+import { db, auth, storage } from '../firebase';
 
 
+
+const imagesRef = ref(storage, 'images');
 
 const ImageGameScreen = () => {
     const [images, setImages] = useState([{'url':""}, {'url':""}]);
@@ -29,6 +32,17 @@ const ImageGameScreen = () => {
     }, []);
 
     const randomImages = () => {
+        listAll(imagesRef).then((res) => {
+            let images = [];
+            res.items.forEach((itemRef) => {
+                images.push(itemRef.fullPath);
+            });
+            console.log(images);
+            //setImages(images.sort(() => Math.random() - 0.5));
+        }).catch((error) => {
+            console.log(error);
+        });
+
         setImages([{'model':"test", "prompt":2, "cat":2, 'url' : "https://domf5oio6qrcr.cloudfront.net/medialibrary/6372/202ebeef-6657-44ec-8fff-28352e1f5999.jpg"}
         , {'model':"test", "prompt":2, "cat":2, 'url' : "https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg"}])
         /*
