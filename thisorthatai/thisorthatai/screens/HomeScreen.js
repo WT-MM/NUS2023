@@ -17,8 +17,8 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.box}>
         <Text style={styles.toptitle}>Welcome To</Text>
         <Text style={styles.title}>This or That (AI Edition)</Text>
-        <Button style={{paddingBottom:"2vh"}} title="Play with Pics"  onPress={() => {navigation.navigate('Pic Or Not')}}></Button>
-        <Button title="Play with Paragraphs" onPress={() => {navigation.navigate('Game')}} />
+        <Button style={{paddingBottom:"2vh"}} title="Play with Pics"  onPress={() => {navigation.navigate('Pick a Pic')}}></Button>
+        <Button title="Play with Paragraphs" onPress={() => {navigation.navigate('Pick a Paragraph')}} />
       </View>
     </View>
   );

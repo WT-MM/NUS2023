@@ -55,8 +55,8 @@ def create_structure(data):
 
 bucket = storage.bucket()
 files = [mm.name.split("/")[1][:-4].split("_") for mm in list(bucket.list_blobs())]
-files = [mm for mm in files if len(mm) == 5 and type(mm) == list]
-
+files = [mm for mm in files if len(mm) == 5 and type(mm) == list and len(mm[3].split(" ")) == 1]
+print(len(files))
 with open("imageReference.json", "w") as f:
     f.write(json.dumps(create_structure(files)))
 

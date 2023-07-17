@@ -1,0 +1,102 @@
+{
+    "Animals": [
+        "A cat sleeping on a sunny windowsill",
+        "A dog playing with a frisbee in a park",
+        "A flock of birds flying over the ocean",
+        "A lion roaring in the savannah",
+        "A group of penguins on an iceberg",
+        "A horse galloping through a field",
+        "A butterfly landing on a flower",
+        "A school of fish swimming in coral reef"
+    ],
+    "Landscapes": [
+        "A snowy mountain range under a clear blue sky",
+        "A tropical beach at sunset",
+        "A dense forest in autumn",
+        "A city skyline at night",
+        "A desert with sand dunes under the hot sun",
+        "A serene lake reflecting the surrounding mountains",
+        "A field of lavender under a cloudy sky",
+        "A winding river through a lush green valley"
+    ],
+    "Objects": [
+        "A vintage car parked on a cobblestone street",
+        "A crystal chandelier in a grand ballroom",
+        "A wooden sailing ship on a calm sea",
+        "A steaming cup of coffee on a wooden table",
+        "A pair of worn-out sneakers on a pavement",
+        "An antique pocket watch with intricate details",
+        "A stack of books on a wooden desk",
+        "A colorful kite flying in a clear sky"
+    ],
+    "People": [
+        "A woman reading a book in a cozy cafe",
+        "A child blowing bubbles in a garden",
+        "A group of people hiking on a mountain trail",
+        "An elderly man playing chess in a park",
+        "A street performer juggling in a busy city square",
+        "A chef preparing a meal in a restaurant kitchen",
+        "A painter working on a canvas in a studio",
+        "A ballet dancer practicing in a mirrored room"
+    ],
+    "Fantasy": [
+        "A dragon flying over a medieval castle",
+        "An astronaut floating in space with Earth in the background",
+        "A mermaid sitting on a rock in the middle of the sea",
+        "A wizard casting a spell in a dark forest",
+        "A futuristic city with flying cars and tall skyscrapers",
+        "A knight battling a monstrous creature",
+        "A fairy sitting on a mushroom in an enchanted forest",
+        "A robot exploring a post-apocalyptic city"
+    ],
+    "Abstract": [
+        "A swirl of colors in a psychedelic pattern",
+        "A geometric pattern with sharp angles and bright colors",
+        "A minimalist design with a single line on a white background",
+        "A complex fractal pattern",
+        "An optical illusion with a hidden image",
+        "A mosaic of vibrant tiles",
+        "A surreal landscape with floating islands",
+        "A pattern of interlocking shapes and lines"
+    ],
+    "Food": [
+        "A table set for a holiday feast",
+        "A slice of pizza with melting cheese",
+        "A bowl of fresh fruit salad",
+        "A sushi platter with a variety of rolls",
+        "A chocolate cake with a glossy ganache",
+        "A refreshing cocktail with a slice of lime",
+        "A steaming bowl of ramen with all the toppings",
+        "A picnic spread on a sunny day"
+    ],
+    "Architecture": [
+        "A modern skyscraper with glass windows",
+        "A rustic cabin in the woods",
+        "A medieval castle on a hill",
+        "A futuristic building with unusual shapes",
+        "A traditional Japanese temple surrounded by cherry blossoms",
+        "A quaint cottage with a thatched roof",
+        "A gothic cathedral with intricate carvings",
+        "An ancient pyramid in a desert"
+    ],
+    "Nature": [
+        "A close-up of a blooming flower",
+        "A waterfall cascading down a rocky cliff",
+        "A tree with vibrant autumn leaves",
+        "A close-up of a frost pattern on a window",
+        "A rainbow arching across a stormy sky",
+        "A close-up of a leaf with morning dew",
+        "A starry night sky with a visible galaxy",
+        "A close-up of a seashell on a sandy beach"
+    ],
+    "Sci-Fi": [
+        "A spaceship landing on an alien planet",
+        "A cityscape of a Martian colony",
+        "A close-up of a futuristic cyborg",
+        "A space station orbiting a distant star",
+        "A group of explorers on a foreign planet",
+        "A close-up of a high-tech gadget",
+        "A battle scene in outer space",
+        "A close-up of an alien life form"
+    ]
+}

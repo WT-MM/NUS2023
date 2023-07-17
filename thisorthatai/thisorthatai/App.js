@@ -12,6 +12,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import HomeScreen from './screens/HomeScreen';
 import ImageGameScreen from './screens/ImageGameScreen';
 import LoginScreen from './screens/LoginScreen';
+import TextGameScreen from './screens/TextGameScreen';
 
 const AppNavigator = createStackNavigator();
 
@@ -105,8 +106,15 @@ export default function App() {
             }}
           />
           <AppNavigator.Screen 
-            name="Pic Or Not" 
+            name="Pick a Pic" 
             component={ImageGameScreen} 
+            options={{
+              headerRight: () => <HeaderRight user={user} />,
+            }}
+          />
+          <AppNavigator.Screen 
+            name="Pick a Paragraph" 
+            component={TextGameScreen} 
             options={{
               headerRight: () => <HeaderRight user={user} />,
             }}
