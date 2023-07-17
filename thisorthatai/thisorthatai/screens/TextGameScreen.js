@@ -56,6 +56,8 @@ const TextGameScreen = () => {
         setTextStyles([{fontSize: calculateFontSize(randData['response'][randOne])}, {fontSize: calculateFontSize(randData['response'][randTwo])}])
     }
 
+    //Need to figure out a more workable solution
+    //Kind of just banging my head at this point
     const calculateFontSize = (text) => {
         console.log(text.length)
         console.log(text)
