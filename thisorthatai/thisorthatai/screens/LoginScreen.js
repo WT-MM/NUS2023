@@ -74,9 +74,9 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Login Screen</Text>
+      <Text style={{fontSize:"1.2rem", paddingBottom:20,fontWeight:200}}>Sign in with</Text>
       <TextInput
-        placeholder="Username"
+        placeholder="Email"
         value={username}
         onChangeText={setUsername}
         style={{ marginTop: 10, marginBottom: 10, width: 200, padding: 10, borderWidth: 1 }}
@@ -89,8 +89,11 @@ const LoginScreen = ({ navigation }) => {
         style={{ marginBottom: 10, width: 200, padding: 10, borderWidth: 1 }}
       />
       <Button title="Login" onPress={handleLogin} />
-      <br style={{margintop:"10"}}></br>
-      <Button title="Login with Google" onPress={googleSignup} />
+      <Text style={{fontSize:"1.2rem", paddingTop:20, fontWeight:200}}>Or</Text>
+      <View style={{paddingTop:20}}>
+          <Button title="Login with Google" onPress={googleSignup} />
+      </View>
+      <Text style={{position:"absolute",bottom:5,left:5,fontSize:"0.4rem",color:"#D3D3D3"}}>your data <b>will</b> be stolen</Text>
     </View>
   );
 };

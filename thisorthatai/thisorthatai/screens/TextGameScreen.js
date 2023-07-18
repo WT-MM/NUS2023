@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Alert, Dimensions, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { serverTimestamp, addDoc, collection, getDoc, doc } from 'firebase/firestore';
+import { serverTimestamp, addDoc, collection, getDoc, doc, setDoc, increment } from 'firebase/firestore';
 import { db, auth } from '../firebase';
 
 const totalNumPrompts = 241;
@@ -112,6 +112,12 @@ const TextGameScreen = () => {
                 "timestamp": timestamp,
                 "gameType": "text"
         })
+
+        if(auth.currentUser){
+            await setDoc(doc(db, "users/", auth.currentUser.uid), {
+                "matches": increment(1)
+            }, {merge: true})
+        }
 
         await addDoc(collection(db, "matches"), {
             "winner": winner.model,

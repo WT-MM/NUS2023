@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Alert, Image, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import {Dimensions} from 'react-native';
-import { serverTimestamp, addDoc, collection } from 'firebase/firestore';
+import { serverTimestamp, addDoc, collection, setDoc, doc, increment } from 'firebase/firestore';
 import { ref, listAll, getDownloadURL } from 'firebase/storage';
 
 import { db, auth, storage } from '../firebase';
@@ -102,6 +102,12 @@ const ImageGameScreen = () => {
          "category": winner.category, 
          "prompt": winner.prompt,
         "style": winner.style})
+
+        if(auth.currentUser){
+            await setDoc(doc(db, "users/", auth.currentUser.uid), {
+                "matches": increment(1)
+            }, {merge: true})
+        }
 
          await addDoc(collection(db, "matches"),{
                 "winner": winner.model,
