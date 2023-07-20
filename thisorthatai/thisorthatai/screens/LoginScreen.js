@@ -73,8 +73,8 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style={{fontSize:"1.2rem", paddingBottom:20,fontWeight:200}}>Sign in with</Text>
+      <View style={{ flex:1, justifyContent: 'center', alignItems: 'center', textAlign:'center' }}>
+      <Text style={{fontSize:"1.4rem", paddingBottom:20,fontWeight:200}}>Sign in with</Text>
       <TextInput
         placeholder="Email"
         value={username}
@@ -86,15 +86,13 @@ const LoginScreen = ({ navigation }) => {
         value={password}
         onChangeText={setPassword}
         secureTextEntry
-        style={{ marginBottom: 10, width: 200, padding: 10, borderWidth: 1 }}
+        style={{ marginBottom: 20, width: 200, padding: 10, borderWidth: 1 }}
       />
-      <Button title="Login" onPress={handleLogin} />
-      <Text style={{fontSize:"1.2rem", paddingTop:20, fontWeight:200}}>Or</Text>
-      <View style={{paddingTop:20}}>
-          <Button title="Login with Google" onPress={googleSignup} />
+      <Button color="#52c0de" title="Login" onPress={handleLogin} />
+      <Text style={{fontSize:"1.2rem", paddingTop:20, paddingBottom:20, fontWeight:200}}>Or</Text>
+      <Button buttonStyle={{backgroundColor:"#52c0de"}} color="#52c0de" title="Login with Google" onPress={googleSignup} />
+      <Text style={{fontSize:"1.4rem", paddingTop:40, fontWeight:400}}>Create an account to keep track of which AI models <b>you</b> prefer!</Text>
       </View>
-      <Text style={{position:"absolute",bottom:5,left:5,fontSize:"0.4rem",color:"#D3D3D3"}}>your data <b>will</b> be stolen</Text>
-    </View>
   );
 };
 

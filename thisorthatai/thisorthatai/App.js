@@ -74,7 +74,7 @@ function HeaderRight({ user }) {
     <Button
       onPress={() => navigation.navigate('Login')}
       title="Login"
-      color="#000"
+      color="#52c0de"
     />
     </View>
   );

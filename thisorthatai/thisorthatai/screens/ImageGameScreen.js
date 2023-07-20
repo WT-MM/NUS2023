@@ -73,7 +73,10 @@ const backRef2 = useRef(null);
     }
     let randStyle = promptsJson[styleName];
     let randCat = Object.keys(randStyle)[Math.floor(Math.random() * Object.keys(randStyle).length)];
-    randCat = "Animals"
+    
+    const available= ["Animals", "Landscapes", "Objects", "People"]
+    
+    randCat = available[Math.floor(Math.random() * available.length)];
 
     let randPrompt = Object.keys(randStyle[randCat])[Math.floor(Math.random() * Object.keys(randStyle[randCat]).length)]; 
 
@@ -87,6 +90,7 @@ const backRef2 = useRef(null);
             console.log("infinite loop")
             console.log("Multiple models for " + styleName +" " + randCat + " " + randPrompt + " do not exist")
             randomImages();
+            break;
         }
     }
 

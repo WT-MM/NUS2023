@@ -17,8 +17,8 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.box}>
         <Text style={styles.toptitle}>Welcome To</Text>
         <Text style={styles.title}>This or That (AI Edition)</Text>
-        <Button style={{paddingBottom:"2vh"}} title="Play with Pics"  onPress={() => {navigation.navigate('Pick a Pic')}}></Button>
-        <Button title="Play with Paragraphs" onPress={() => {navigation.navigate('Pick a Paragraph')}} />
+        <Button buttonStyle={{backgroundColor:"#2fa0f7"}} style={[{paddingBottom:"2vh"}]} color="#2fa0f7" title="Play with Pics"  onPress={() => {navigation.navigate('Pick a Pic')}}/>
+        <Button buttonStyle={{backgroundColor:"#2fa0f7"}} title="Play with Paragraphs" onPress={() => {navigation.navigate('Pick a Paragraph')}} />
       </View>
     </View>
   );
@@ -50,11 +50,7 @@ const styles = StyleSheet.create({
     marginBottom: 20
     },
   button: {
-    backgroundColor: '#007BFF',
-    padding: 10,
-    borderRadius: 5,
-    width: '100%',
-    marginBottom: 10,
+    backgroundColor: '#38a8c7',
   },
   buttonText: {
     color: '#fff',
