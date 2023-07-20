@@ -11,7 +11,7 @@ const TextGameScreen = () => {
     const [adjustedStyles, setAdjustedStyles] = useState(styles);
     const [isLandscape, setIsLandscape] = useState(false);
     const [textStyles, setTextStyles] = useState({fontSize: 20}, {fontSize:20}); // Initial font size
-    const [caption, setCaption] = useState("Which one is more likely to be said by a human?");
+    const [caption, setCaption] = useState(" ");
 
     useEffect(() => {
         randomTexts();
@@ -58,6 +58,7 @@ const TextGameScreen = () => {
 
     //Need to figure out a more workable solution
     //Kind of just banging my head at this point
+    
     const calculateFontSize = (text) => {
         console.log(text.length)
         console.log(text)
