@@ -63,7 +63,7 @@ const ImageGameScreen = () => {
   const animationRef1 = useRef(null);
   const backRef1 = useRef(null);
   const animationRef2 = useRef(null);
-const backRef2 = useRef(null);
+  const backRef2 = useRef(null);
 
   const pullImages = useCallback(async () => {
     if(imgStyle == null){
@@ -74,10 +74,6 @@ const backRef2 = useRef(null);
     let randStyle = promptsJson[styleName];
     let randCat = Object.keys(randStyle)[Math.floor(Math.random() * Object.keys(randStyle).length)];
     
-    const available= ["Animals", "Landscapes", "Objects", "People"]
-    
-    randCat = available[Math.floor(Math.random() * available.length)];
-
     let randPrompt = Object.keys(randStyle[randCat])[Math.floor(Math.random() * Object.keys(randStyle[randCat]).length)]; 
 
     const model1 = Object.keys(randStyle[randCat][randPrompt])[Math.floor(Math.random() * Object.keys(randStyle[randCat][randPrompt]).length)];

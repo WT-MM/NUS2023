@@ -218,7 +218,13 @@ modelSimilarity(similarities["style"]["1"])
 #showSimilarityPairs(similarities["style"]["1"])
 #showSimilarityPairs(bigGroupedSimilarities)
 
-print(similarModels("sdxl", bigGroupedSimilarities))
+#print(similarModels("sdxl", bigGroupedSimilarities))
 
-for model in models:
-    plotSimilarModels(model, bigGroupedSimilarities, save=True)
+#showSimilarityPairs(bigGroupedSimilarities)
+
+
+for thing in groupedSimilarities.values():
+    plotlyShow(thing, name=["style"])
+
+#for model in models:
+#    plotSimilarModels(model, bigGroupedSimilarities, save=True)

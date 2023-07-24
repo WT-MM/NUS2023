@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { View, Text, StyleSheet, Alert, Dimensions, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { serverTimestamp, addDoc, collection, getDoc, doc, setDoc, increment } from 'firebase/firestore';
@@ -12,6 +12,11 @@ const TextGameScreen = () => {
     const [isLandscape, setIsLandscape] = useState(false);
     const [textStyles, setTextStyles] = useState({fontSize: 20}, {fontSize:20}); // Initial font size
     const [caption, setCaption] = useState(" ");
+
+    const textAnimRef1 = useRef(null);
+    const textBackRef1 = useRef(null);
+    const textAnimRef2 = useRef(null);
+    const textBackRef2 = useRef(null);
 
     useEffect(() => {
         randomTexts();
@@ -103,7 +108,7 @@ const TextGameScreen = () => {
 
     }
 
-    const handlePress = async (winner, loser) => {
+    const handlePress = useCallback(async (winner, loser, index) => {
         let timestamp = serverTimestamp()
 
         await addDoc(collection(db, "users/", auth.currentUser ? auth.currentUser.uid : "anon", "history"),
@@ -128,40 +133,64 @@ const TextGameScreen = () => {
             "user": auth.currentUser ? auth.currentUser.uid : "anon"
         })
 
-        randomTexts()
-    }
+        if (index === 1) {
+            textAnimRef1.current.animate({
+                0: { opacity: 1, rotate: '0deg' },
+                0.5: { opacity: 0.5, rotate: '-4deg' },
+                1: { opacity: 0, rotate: '0deg' },
+            }, 300).then(() => {
+                setTimeout(() => {
+                    textAnimRef1.current.transitionTo({ opacity: 1 });
+                }, 500);
+            });
+        } else if (index === 2) {
+            textAnimRef2.current.animate({
+                0: { opacity: 1, rotate: '0deg' },
+                0.5: { opacity: 0.5, rotate: '4deg' },
+                1: { opacity: 0, rotate: '0deg' },
+            }, 300).then(() => {
+                setTimeout(() => {
+                    textAnimRef2.current.transitionTo({ opacity: 1 });
+                }, 300);
+            });
+        }
+
+        // Add a delay to allow animation to complete.
+        setTimeout(() => {
+            // Rest of the existing logic here.
+
+            // Reload the images.
+            randomTexts();
+        }, 300);
+    }, [randomTexts]);
 
     return (
         <View style={adjustedStyles.container}>
-            <TouchableOpacity onPress={() => handlePress(texts[0], texts[1])}>
+            <TouchableOpacity onPress={() => handlePress(texts[0], texts[1], 1)}>
                 <Animatable.View 
-                        animation='pulse'
+                        ref={textAnimRef1}
                         duration={500}
                         style={adjustedStyles.textBox}>
-                <Animatable.Text 
-                    animation="pulse" 
-                    duration={500} 
+                <Text 
                     style={[styles.text, textStyles[0]]} 
                 >
                     {texts[0].text}
-                </Animatable.Text>
+                </Text>
             </Animatable.View>
             </TouchableOpacity>
             <View style={adjustedStyles.promptBox}>
                 <Text style={{textAlign:"center"}}>{caption}</Text>
             </View>
-            <TouchableOpacity onPress={() => handlePress(texts[1], texts[0])}>
+            <TouchableOpacity onPress={() => handlePress(texts[1], texts[0], 2)}>
                 <Animatable.View 
-                    animation='pulse'
+                    ref={textAnimRef2}
                     duration={500}
                     style={adjustedStyles.textBox}>
-                    <Animatable.Text 
-                        animation="pulse" 
-                        duration={500} 
+                    <Text 
                         style={[styles.text, textStyles[1]]} 
                     >
                         {texts[1].text}
-                    </Animatable.Text>
+                    </Text>
                 </Animatable.View>
             </TouchableOpacity>
         </View>
@@ -184,7 +213,6 @@ let landscapeStyles = StyleSheet.create({
     },
     promptBox:{
         textAlign: 'center',
-        padding:"0 10 0 10",
         width:"20vw",
     }
 });
