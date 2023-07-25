@@ -14,9 +14,7 @@ const TextGameScreen = () => {
     const [caption, setCaption] = useState(" ");
 
     const textAnimRef1 = useRef(null);
-    const textBackRef1 = useRef(null);
     const textAnimRef2 = useRef(null);
-    const textBackRef2 = useRef(null);
 
     useEffect(() => {
         randomTexts();

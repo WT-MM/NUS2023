@@ -189,7 +189,7 @@ def showSimilarityPairs(data):
     )
 
 
-
+    #fig.write_image("output/similarity_matrix.png")
     fig.show()
 
 
@@ -216,15 +216,15 @@ def save():
 modelSimilarity(similarities["style"]["1"])
 
 #showSimilarityPairs(similarities["style"]["1"])
-#showSimilarityPairs(bigGroupedSimilarities)
+showSimilarityPairs(bigGroupedSimilarities)
 
 #print(similarModels("sdxl", bigGroupedSimilarities))
 
 #showSimilarityPairs(bigGroupedSimilarities)
 
+#for thing in groupedSimilarities.values():
+#    plotlyShow(thing, name=["style"])
 
-for thing in groupedSimilarities.values():
-    plotlyShow(thing, name=["style"])
 
 #for model in models:
 #    plotSimilarModels(model, bigGroupedSimilarities, save=True)

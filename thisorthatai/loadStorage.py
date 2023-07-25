@@ -1,7 +1,7 @@
 import glob
 import os
 from firebase_admin import credentials, initialize_app, storage
-# Init firebase with your credentials
+
 cred = credentials.Certificate("firebaseCreds.json")
 initialize_app(cred, {'storageBucket': 'thisorthatai.appspot.com'})
 

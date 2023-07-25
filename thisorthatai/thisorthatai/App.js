@@ -13,6 +13,7 @@ import HomeScreen from './screens/HomeScreen';
 import ImageGameScreen from './screens/ImageGameScreen';
 import LoginScreen from './screens/LoginScreen';
 import TextGameScreen from './screens/TextGameScreen';
+import VideoScreen from './screens/VideoScreen';
 
 const AppNavigator = createStackNavigator();
 
@@ -115,6 +116,13 @@ export default function App() {
           <AppNavigator.Screen 
             name="Pick a Paragraph" 
             component={TextGameScreen} 
+            options={{
+              headerRight: () => <HeaderRight user={user} />,
+            }}
+          />
+          <AppNavigator.Screen
+            name="AI Animations"
+            component={VideoScreen}
             options={{
               headerRight: () => <HeaderRight user={user} />,
             }}
