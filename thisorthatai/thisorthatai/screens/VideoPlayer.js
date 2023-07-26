@@ -1,25 +1,30 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
-import { Video, ResizeMode } from 'expo-av';
+import React, { useEffect, useRef } from 'react';
+import { AppState, Dimensions } from 'react-native';
+import { Video } from 'expo-av';
 
 const isPortrait = Dimensions.get('window').height > Dimensions.get('window').width;
+const VIDEO_HEIGHT = Dimensions.get('window').height*0.98;
+const VIDEO_WIDTH = isPortrait ? Dimensions.get('window').width : VIDEO_HEIGHT * (9 / 16);
 
-const VIDEO_HEIGHT = isPortrait ? Dimensions.get("window").width * (16 / 9) : Dimensions.get('window').height;
-const VIDEO_WIDTH = isPortrait ? Dimensions.get('window').width : VIDEO_HEIGHT * (9/16);
 
 const VideoPlayer = ({ source, isPaused }) => {
-  const videoRef = useRef();
-  const [isFocused, setIsFocused] = useState(true);
+  const videoRef = useRef(null);
+  const appState = useRef(AppState.currentState);
+
+  const handleAppStateChange = (nextAppState) => {
+    if (appState.current.match(/inactive|background/) && nextAppState === 'active') {
+      videoRef.current.playAsync();
+    } else {
+      videoRef.current.pauseAsync();
+    }
+    appState.current = nextAppState;
+  };
 
   useEffect(() => {
-    console.log("Width: " + VIDEO_WIDTH + " Height: " + VIDEO_HEIGHT)
-    const onFocusChange = () => {
-      setIsFocused(document.hasFocus());
-    };
+    AppState.addEventListener('change', handleAppStateChange);
 
-    window.addEventListener('focus', onFocusChange);
     return () => {
-      window.removeEventListener('focus', onFocusChange);
+      AppState.removeEventListener('change', handleAppStateChange);
     };
   }, []);
 
@@ -29,47 +34,17 @@ const VideoPlayer = ({ source, isPaused }) => {
     } else {
       videoRef.current.playAsync();
     }
-  }, [isFocused, isPaused]);
-
-  const handleVideoRef = (component) => {
-    videoRef.current = component;
-  };
+  }, [isPaused]);
 
   return (
-    <View style={isPortrait ? styles.container : styles.landscapeContainer}>
-      <Video
-        ref={handleVideoRef}
-        source={{ uri: source }}
-        style={isPortrait ? styles.video : styles.landscapeVideo}
-        resizeMode={ResizeMode.STRETCH}
-        shouldPlay={!isPaused}
-        isLooping
-        onPlaybackStatusUpdate={(status) => {}}
-      />
-    </View>
+    <Video
+      ref={videoRef}
+      source={{ uri: source }}
+      style={{ height: VIDEO_HEIGHT, width: VIDEO_WIDTH}}
+      shouldPlay={!isPaused}
+      resizeMode="cover"
+    />
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: VIDEO_WIDTH,
-    height: VIDEO_HEIGHT,
-  },
-  landscapeContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: VIDEO_WIDTH,
-    height: VIDEO_HEIGHT,
-  },
-  video: {
-    flex: 1,
-  },
-  landscapeVideo: {
-    width: VIDEO_WIDTH,
-    height: VIDEO_HEIGHT,
-    flex:1
-  },
-});
 
 export default VideoPlayer;
