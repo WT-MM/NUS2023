@@ -42,7 +42,7 @@ const VideoPlayer = ({ source, isPaused }) => {
       source={{ uri: source }}
       style={{ height: VIDEO_HEIGHT, width: VIDEO_WIDTH}}
       shouldPlay={!isPaused}
-      resizeMode="cover"
+      resizeMode="contain"
     />
   );
 };

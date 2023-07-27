@@ -17,6 +17,15 @@ const VideoScreen = () => {
     { id: 5, url: 'https://player.vimeo.com/external/403302551.hd.mp4?s=0c226968d3f6845f176abc71ad4aad7ca27b4a8d&profile_id=174&oauth2_token_id=57447761' },
     { id: 6, url: 'https://player.vimeo.com/external/403278689.hd.mp4?s=791eaa4bfecbae421613ab0401a39b429542f18d&profile_id=174&oauth2_token_id=57447761' },
   ];
+
+  useEffect(() => {
+    const printOut = () => {
+      console.log('scrollY', scrollY);
+      setTimeout(printOut, 1000);
+    };
+    //printOut();
+  }, []);
+
   
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -26,34 +35,38 @@ const VideoScreen = () => {
     return array
   };
 
+
   const renderItem = ({ item, index }) => {
-    console.log(item)
-    const inputRange = [(index - 1) * VIDEO_HEIGHT, index * VIDEO_HEIGHT, (index + 1) * VIDEO_HEIGHT];
+    const inputRange = [
+      (index - 0.5) * VIDEO_HEIGHT,
+      index * VIDEO_HEIGHT,
+      (index + 0.5) * VIDEO_HEIGHT,
+    ];
     const translateY = scrollY.interpolate({
       inputRange,
-      outputRange: [VIDEO_HEIGHT, 0, -VIDEO_HEIGHT]
+      outputRange: [VIDEO_HEIGHT * 0.5, 0, -VIDEO_HEIGHT * 0.5],
     });
 
     return (
-      <Animated.View style={[{ transform: [{ translateY }], height:VIDEO_HEIGHT}, extraStyle]}>
+      <Animated.View style={{ transform: [{ translateY }], height: VIDEO_HEIGHT }}>
         <VideoPlayer source={item.url} isPaused={false} />
       </Animated.View>
     );
   };
 
   return (
-    <Animated.FlatList
-      data={shuffleArray(videos)}
+    <FlatList
+      data={videos}
       keyExtractor={item => item.id.toString()}
-      style={{backgroundColor: 'black'}}
+      style={{ backgroundColor: 'light gray', height: VIDEO_HEIGHT}}
+      initialNumToRender={1}
+      removeClippedSubviews={true}
       renderItem={renderItem}
       pagingEnabled={true}
-      scrollEventThrottle={16}
-      onScroll={Animated.event(
-        [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-        { useNativeDriver: true }
-      )}
-      maxToRenderPerBatch={2} // Limit the number of items rendered in each batch
+      scrollEventThrottle={5}
+      onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
+        useNativeDriver: true,
+      })}
     />
   );
 };
