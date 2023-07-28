@@ -121,6 +121,11 @@ const VideoScreenHeaderRight = ({ user }) => {
       fileInputRef.current.click();
     }
   };
+
+  /*
+        <View style={{width:"2vw"}}></View>
+      <HeaderRight user={user} />
+  */
   
   return (
     <View style={{ flexDirection: 'row', paddingRight: 10 }}>
@@ -132,8 +137,7 @@ const VideoScreenHeaderRight = ({ user }) => {
         onChange={uploadVideo}
         style={{ display: 'none' }}
       />
-      <View style={{width:"2vw"}}></View>
-      <HeaderRight user={user} />
+
     </View>
   );
 };
