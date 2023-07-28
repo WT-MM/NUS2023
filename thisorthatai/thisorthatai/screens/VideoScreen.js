@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Animated, FlatList, Dimensions, StyleSheet } from 'react-native';
+import { Animated, FlatList, Dimensions } from 'react-native';
 import VideoPlayer from './VideoPlayer';
 
 const isPortrait = Dimensions.get('window').height > Dimensions.get('window').width;
@@ -9,10 +9,21 @@ const extraStyle = isPortrait ? {} : { margin:'auto' };
 const VideoScreen = () => {
   const scrollY = useRef(new Animated.Value(0)).current;
 
+  const [currentVisibleIndex, setCurrentVisibleIndex] = useState(0);
+
+  const onViewableItemsChanged = useRef(({ viewableItems }) => {
+    console.log('viewableItems', viewableItems)
+    setCurrentVisibleIndex(viewableItems[0]?.index);
+  }).current;
+
+  const viewabilityConfig = useRef({
+    itemVisiblePercentThreshold: 20  // Adjust this value as needed
+  }).current;
+
   const videos = [
-    { id: 1, url: 'https://assets.mixkit.co/videos/preview/mixkit-winter-fashion-cold-looking-woman-concept-video-39874-large.mp4' },
-    { id: 2, url: 'https://assets.mixkit.co/videos/preview/mixkit-little-girl-finds-an-easter-egg-in-the-garden-48600-large.mp4' },
-    { id: 3, url: 'https://player.vimeo.com/external/398518760.hd.mp4?s=d27e3d698f8dc07ece5fc0e1eb7b8c2404353dac&profile_id=174&oauth2_token_id=57447761' },
+    { id: 1, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230725051443.mp4?alt=media&token=8028f2cd-c19b-4643-b891-b954db83d81a' },
+    { id: 2, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230725083454.mp4?alt=media&token=d5f66c77-d25f-4b56-89a7-1d616a462493' },
+    { id: 3, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230726065405.mp4?alt=media&token=f9713c35-8ada-4d90-9d25-6e2839f95802' },
     { id: 4, url: 'https://player.vimeo.com/external/476838909.sd.mp4?s=33e4e8ec8dcd99aefd4eda56737c498ac69c8c1f&profile_id=165&oauth2_token_id=57447761' },
     { id: 5, url: 'https://player.vimeo.com/external/403302551.hd.mp4?s=0c226968d3f6845f176abc71ad4aad7ca27b4a8d&profile_id=174&oauth2_token_id=57447761' },
     { id: 6, url: 'https://player.vimeo.com/external/403278689.hd.mp4?s=791eaa4bfecbae421613ab0401a39b429542f18d&profile_id=174&oauth2_token_id=57447761' },
@@ -20,10 +31,10 @@ const VideoScreen = () => {
 
   useEffect(() => {
     const printOut = () => {
-      console.log('scrollY', scrollY);
+      console.log('currentVisibleIndex', currentVisibleIndex);
       setTimeout(printOut, 1000);
     };
-    //printOut();
+    printOut();
   }, []);
 
   
@@ -49,7 +60,7 @@ const VideoScreen = () => {
 
     return (
       <Animated.View style={{ transform: [{ translateY }], height: VIDEO_HEIGHT }}>
-        <VideoPlayer source={item.url} isPaused={false} />
+        <VideoPlayer source={item.url} isPaused={false} restart={currentVisibleIndex === index} />
       </Animated.View>
     );
   };
@@ -58,12 +69,17 @@ const VideoScreen = () => {
     <FlatList
       data={videos}
       keyExtractor={item => item.id.toString()}
-      style={{ backgroundColor: 'light gray', height: VIDEO_HEIGHT}}
-      initialNumToRender={1}
-      removeClippedSubviews={true}
+      style={{ backgroundColor: 'light gray',height: VIDEO_HEIGHT }}
+      contentContainerStyle={[{justifyContent:'center', alignItems:'center'}]}
+      removeClippedSubviews={false}
       renderItem={renderItem}
+      onViewableItemsChanged={onViewableItemsChanged}
+      viewabilityConfig={viewabilityConfig}
       pagingEnabled={true}
-      scrollEventThrottle={5}
+      scrollEventThrottle={16}
+      getItemLayout={(data, index) => (
+        {length: VIDEO_HEIGHT, offset: VIDEO_HEIGHT * index, index}
+      )}
       onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], {
         useNativeDriver: true,
       })}
