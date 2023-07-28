@@ -21,6 +21,8 @@ import VideoScreen from './screens/VideoScreen';
 
 const AppNavigator = createStackNavigator();
 
+
+
 // A new component for the header right button
 function HeaderRight({ user }) {
   const [dialogVisible, setDialogVisible] = useState(false);
@@ -130,7 +132,7 @@ const VideoScreenHeaderRight = ({ user }) => {
         onChange={uploadVideo}
         style={{ display: 'none' }}
       />
-      <View style={{width:"5vw"}}></View>
+      <View style={{width:"2vw"}}></View>
       <HeaderRight user={user} />
     </View>
   );
@@ -180,6 +182,25 @@ export default function App() {
             component={VideoScreen}
             options={{
               headerRight: () => <VideoScreenHeaderRight user={user}/>,
+              headerShown: true,
+              headerTitleStyle:{
+                backgroundColor:"rgba(255,255,255,0.4)",
+                paddingTop:8,
+                paddingBottom:8,
+                paddingLeft:10,
+                paddingRight:10,
+                borderRadius:3,
+                color:'black'
+              },
+              headerLeftContainerStyle:{
+                backgroundColor:"rgba(255,255,255,0.4)",
+                borderRadius:3,
+                height:'10vw',
+                marginTop:12,
+                minHeight:20,
+                maxHeight:40,
+              },
+              headerTransparent:true,
             }}
           />
           <AppNavigator.Screen name="Login" component={LoginScreen} />

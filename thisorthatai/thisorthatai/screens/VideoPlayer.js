@@ -3,7 +3,7 @@ import { AppState, Dimensions } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 
 const isPortrait = Dimensions.get('window').height > Dimensions.get('window').width;
-const VIDEO_HEIGHT = Dimensions.get('window').height*0.95;
+const VIDEO_HEIGHT = Dimensions.get('window').height;
 const VIDEO_WIDTH = isPortrait ? Dimensions.get('window').width : VIDEO_HEIGHT * (9 / 16);
 
 
