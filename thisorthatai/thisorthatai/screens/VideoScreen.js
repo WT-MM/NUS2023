@@ -6,7 +6,7 @@ import { storage } from '../firebase';
 import { ref, getDownloadURL, listAll } from "firebase/storage";
 
 const isPortrait = Dimensions.get('window').height > Dimensions.get('window').width;
-const VIDEO_HEIGHT = Dimensions.get('window').height*0.98;
+const VIDEO_HEIGHT = Dimensions.get('window').height;
 const VIDEO_WIDTH = isPortrait ? Dimensions.get('window').width : VIDEO_HEIGHT * (9 / 16);
 const extraStyle = isPortrait ? {} : { margin:'auto' };
 const VideoScreen = () => {
@@ -34,9 +34,12 @@ const VideoScreen = () => {
   ];
 
   const hmmVideos = [
-    { id:1, url:'./assets/videos/20230725051443.mp4' },
-    { id:2, url:'./assets/videos/20230725083454.mp4' },
-    { id:3, url:'./assets/videos/20230726065405.mp4' },
+    { id:1, url:'https://wt-mm.github.io/Temp/videos/20230725051443.mp4' },
+    { id:2, url:'https://wt-mm.github.io/Temp/videos/20230725083454.mp4' },
+    { id:3, url:'https://wt-mm.github.io/Temp/videos/20230726065405.mp4' },
+    { id:4, url:'https://wt-mm.github.io/Temp/videos/20230727015634.mp4' },
+    { id:5, url:'https://wt-mm.github.io/Temp/videos/20230728040207.mp4' },
+    { id:6, url:'https://wt-mm.github.io/Temp/videos/20230728041009.mp4' },
   ]
 
   useEffect(() => {
@@ -57,8 +60,8 @@ const VideoScreen = () => {
       console.log(error);
     });*/
     //setVideos(shuffleArray(mmVideos));
-    setVideos(shuffleArray(mmVideos));
-    //setVideos(hmmVideos);
+    //setVideos(shuffleArray(mmVideos));
+    setVideos(hmmVideos);
 
     const printOut = () => {
       console.log('currentVisibleIndex', currentVisibleIndex);
