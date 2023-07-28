@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, Button } from 'react-native';
 import { Dialog } from 'react-native-elements';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { Avatar } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { auth } from './firebase';
 
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+
+
 import { onAuthStateChanged } from 'firebase/auth';
+
+import { storage } from './firebase';
 
 import HomeScreen from './screens/HomeScreen';
 import ImageGameScreen from './screens/ImageGameScreen';
@@ -50,11 +54,10 @@ function HeaderRight({ user }) {
     return (
       <View style={{ paddingRight: 10 }}>
         <TouchableOpacity onPress={showDialog}>
-          <Avatar
-            rounded
-            source={{
-              uri: user.photoURL,
-            }}
+          <img
+            style={{width:"10vw",height:"10vw", minHeight:"20px", minWidth:"20px", maxHeight:"40px", maxWidth:"40px",borderRadius:"50%",marginRight:"1vw"}}
+            src={user.photoURL}
+            referrerPolicy="no-referrer" 
           />
         </TouchableOpacity>
         <Dialog style={{width:"10vw"}} isVisible={dialogVisible}>
@@ -71,7 +74,7 @@ function HeaderRight({ user }) {
   }
 
   return (
-    <View style={{ paddingRight: 10 }}>
+    <View style={{ paddingRight: 10}}>
     <Button
       onPress={() => navigation.navigate('Login')}
       title="Login"
@@ -80,6 +83,58 @@ function HeaderRight({ user }) {
     </View>
   );
 }
+
+const VideoScreenHeaderRight = ({ user }) => {
+  const navigation = useNavigation();
+  const fileInputRef = useRef();
+
+  const uploadVideo = async (event) => {
+    const file = event.target.files[0];
+    
+    const storageRef = ref(storage, 'uploads/'+auth.currentUser.uid+"/"+file.name);
+  
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    // Listen for state changes, errors, and completion of the upload.
+    uploadTask.on('state_changed',
+      (snapshot) => {
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+      }, 
+      (error) => {
+        // Handle unsuccessful uploads
+        console.log(error);
+      }, 
+      () => {
+        // Handle successful uploads on complete
+          console.log('File uploaded');
+        });
+  };
+
+  const handleClick = () => {
+    if (!user) {
+      navigation.navigate('Login');
+    } else {
+      fileInputRef.current.click();
+    }
+  };
+  
+  return (
+    <View style={{ flexDirection: 'row', paddingRight: 10 }}>
+      <Button title="Upload Video" onPress={handleClick} />
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="video/*"
+        onChange={uploadVideo}
+        style={{ display: 'none' }}
+      />
+      <View style={{width:"5vw"}}></View>
+      <HeaderRight user={user} />
+    </View>
+  );
+};
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -124,7 +179,7 @@ export default function App() {
             name="AI Animations"
             component={VideoScreen}
             options={{
-              headerRight: () => <HeaderRight user={user} />,
+              headerRight: () => <VideoScreenHeaderRight user={user}/>,
             }}
           />
           <AppNavigator.Screen name="Login" component={LoginScreen} />

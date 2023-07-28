@@ -24,7 +24,6 @@ const VideoPlayer = ({ source, isPaused, restart }) => {
     if (restart) {
       videoRef.current.playFromPositionAsync(0);
     }
-    console.log('restart', restart)
   }, [restart]);
 
   useEffect(() => {
