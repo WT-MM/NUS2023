@@ -28,12 +28,19 @@ const VideoScreen = () => {
     { id: 1, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230725051443.mp4?alt=media&token=8028f2cd-c19b-4643-b891-b954db83d81a' },
     { id: 2, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230725083454.mp4?alt=media&token=d5f66c77-d25f-4b56-89a7-1d616a462493' },
     { id: 3, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230726065405.mp4?alt=media&token=f9713c35-8ada-4d90-9d25-6e2839f95802' },
-    { id: 4, url: 'https://player.vimeo.com/external/476838909.sd.mp4?s=33e4e8ec8dcd99aefd4eda56737c498ac69c8c1f&profile_id=165&oauth2_token_id=57447761' },
-    { id: 5, url: 'https://player.vimeo.com/external/403302551.hd.mp4?s=0c226968d3f6845f176abc71ad4aad7ca27b4a8d&profile_id=174&oauth2_token_id=57447761' },
-    { id: 6, url: 'https://player.vimeo.com/external/403278689.hd.mp4?s=791eaa4bfecbae421613ab0401a39b429542f18d&profile_id=174&oauth2_token_id=57447761' },
+    { id: 4, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230727015634.mp4?alt=media&token=f97f7980-8573-4d8f-a948-3a8ed1eeac32' },
+    { id: 5, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230728040207.mp4?alt=media&token=b98158d7-50c8-478f-bc4e-5ac155e7c76d' },
+    { id: 6, url: 'https://firebasestorage.googleapis.com/v0/b/thisorthatai.appspot.com/o/videos%2F20230728041009.mp4?alt=media&token=02d3f2d9-4ea6-4520-9456-e4d540be535e' },
   ];
 
+  const hmmVideos = [
+    { id:1, url:'./assets/videos/20230725051443.mp4' },
+    { id:2, url:'./assets/videos/20230725083454.mp4' },
+    { id:3, url:'./assets/videos/20230726065405.mp4' },
+  ]
+
   useEffect(() => {
+    /*
     listAll(ref(storage, 'videos')).then((res) => {
       let urls = [];
       res.items.forEach((itemRef) => {
@@ -48,9 +55,10 @@ const VideoScreen = () => {
       });
     }).catch((error) => {
       console.log(error);
-    });
+    });*/
     //setVideos(shuffleArray(mmVideos));
-
+    setVideos(shuffleArray(mmVideos));
+    //setVideos(hmmVideos);
 
     const printOut = () => {
       console.log('currentVisibleIndex', currentVisibleIndex);
