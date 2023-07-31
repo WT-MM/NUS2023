@@ -40,6 +40,7 @@ const VideoScreen = () => {
     { id:4, url:'https://wt-mm.github.io/Temp/videos/20230727015634.mp4' },
     { id:5, url:'https://wt-mm.github.io/Temp/videos/20230728040207.mp4' },
     { id:6, url:'https://wt-mm.github.io/Temp/videos/20230728041009.mp4' },
+    { id:6, url:'https://wt-mm.github.io/Temp/videos/20230729054754.mp4' },
   ]
 
   useEffect(() => {
@@ -61,7 +62,7 @@ const VideoScreen = () => {
     });*/
     //setVideos(shuffleArray(mmVideos));
     //setVideos(shuffleArray(mmVideos));
-    setVideos(hmmVideos);
+    setVideos(shuffleArray(hmmVideos));
 
     const printOut = () => {
       console.log('currentVisibleIndex', currentVisibleIndex);

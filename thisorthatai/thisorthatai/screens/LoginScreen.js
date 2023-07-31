@@ -88,13 +88,15 @@ const LoginScreen = ({ navigation }) => {
         secureTextEntry
         style={{ marginBottom: 20, width: 200, padding: 10, borderWidth: 1 }}
       />
-      <Button color="#52c0de" title="Login" onPress={handleLogin} />
+      <Button color="#52c0de" title="Submit" onPress={handleLogin} />
       <Text style={{fontSize:"1.2rem", paddingTop:20, paddingBottom:20, fontWeight:200}}>Or</Text>
-      <Button buttonStyle={{backgroundColor:"#52c0de"}} color="#52c0de" title="Login with Google" onPress={googleSignup} />
-      <Text style={{fontSize:"1.4rem", paddingTop:40, fontWeight:400}}>Create an account to keep track of which AI models <b>you</b> prefer!</Text>
+      <Button buttonStyle={{backgroundColor:"#52c0de"}} color="#52c0de" title="Sign in with Google" onPress={googleSignup} />
       </View>
   );
 };
+
+      //<Text style={{fontSize:"1.4rem", paddingTop:40, fontWeight:400}}>Create an account to keep track of which AI models <b>you</b> prefer!</Text>
+
 
 LoginScreen.navigationOptions = ({ navigation }) => {
   return {

@@ -1,13 +1,25 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { View, Text, StyleSheet, Alert, Image, TouchableOpacity, Dimensions } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { serverTimestamp, addDoc, collection, setDoc, doc, increment } from 'firebase/firestore';
+import { serverTimestamp, addDoc, collection, getDoc, setDoc, doc, increment } from 'firebase/firestore';
 import { ref, getDownloadURL } from 'firebase/storage';
 
 import { db, auth, storage } from '../firebase';
 
 import promptsJson from '../imageReference.json';
 import imagesJson from '../imagePrompts.json';
+import { set } from 'react-native-reanimated';
+
+const statsCSS = {
+  fontSize: '2rem',
+  textAlign: 'center',
+  paddingTop: '40%',
+  fontWeight:350,
+  verticalAlign: 'middle',
+  fontFamily: 'Roboto',
+
+};
+
 
 const styles = StyleSheet.create({
   containerLandscape: {
@@ -56,14 +68,38 @@ const ImageGameScreen = () => {
     isLandscape: false,
     imgStyle: null,
     caption: "",
+    modelStats:null,
     imageCSS: Dimensions.get('window').width > Dimensions.get('window').height ? styles.imgLandscape : styles.img,
   });
+
+  let modelStats = null;
+
+  const pullStats = async () => {
+    const docRef = doc(db, 'stats', 'image');
+    const docSnap = await getDoc(docRef);
+    console.log(docSnap.data())
+    if (docSnap.exists()) {
+      modelStats = docSnap.data();
+      console.log('Document data:', docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log('No such document!');
+    }
+  };
+
+
+  useEffect(() => {
+    pullStats();
+  }, []);
   
   // Create refs
   const animationRef1 = useRef(null);
   const backRef1 = useRef(null);
   const animationRef2 = useRef(null);
   const backRef2 = useRef(null);
+
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
 
   const pullImages = useCallback(async () => {
     if(imgStyle == null){
@@ -199,9 +235,127 @@ const ImageGameScreen = () => {
                 // Rest of the existing logic here.
     
                 // Reload the images.
-                randomImages();
+                displayStats(winner.model, loser.model, index).then(() => {
+                  //randomImages();
+                  //Just running it after the 2nd timeout insteads
+                });
             }, 500);
   }, [randomImages]);
+
+
+  const displayStats = async (winnerModel, loserModel, index) =>{
+    if(!modelStats){
+      pullStats();
+    }
+    console.log(modelStats)
+    const winnerLikelihood = modelStats[winnerModel][loserModel];
+    const loserLikelihood = modelStats[loserModel][winnerModel];
+
+    console.log("winnerLikelihood: " + winnerLikelihood)
+    console.log("loserLikelihood: " + loserLikelihood)
+
+
+    let left = leftRef.current;
+    let right = rightRef.current;
+
+    right.style.opacity = 0.7;
+    left.style.opacity = 0.7;
+    
+    right.style.transition= "opacity 0.5s";
+    left.style.transition= "opacity 0.5s";
+
+
+
+    if(index == 1){
+        left.innerHTML = "This image had a " + Math.round(winnerLikelihood*100) + "% chance of winning you over!";
+        right.innerHTML = "This image had a " + Math.round(loserLikelihood*100) + "% chance of winning you over!";
+
+    }else{
+        left.innerHTML = "This image had a " + Math.round(loserLikelihood*100) + "% chance of winning you over!";
+        right.innerHTML = "This image had a " + Math.round(winnerLikelihood*100) + "% chance of winning you over!";
+    }
+
+    setTimeout(() => {
+      right.style.opacity = 0;
+      left.style.opacity = 0;
+
+      setTimeout(() => {
+        left.innerHTML = "";
+        right.innerHTML = "";
+        left.style.transition= "";
+        right.style.transition= "";
+        randomImages(); 
+      }, 500);
+    }, 2000);
+
+
+    //Create an element to display the stats
+
+/*
+    const winnerStats = document.createElement("div");
+    winnerStats.style.display = "inline-block";
+    winnerStats.style.marginRight = "10px";
+    winnerStats.style.textAlign = "center";
+    winnerStats.style.position = "absolute";
+    winnerStats.style.padding = "3vw";
+    winnerStats.style.borderRadius = "10px";
+    winnerStats.style.transition = "all 0.5s ease";
+    winnerStats.style.backgroundColor = "#ffffff";
+    if(index == 1){
+        winnerStats.style.left = "10px";
+    }else{
+        winnerStats.style.right = "10px";
+    }
+    winnerStats.style.top = "30%";
+
+
+    const winnerText = document.createElement("div");
+    winnerText.style.fontSize = "1.5rem";
+    winnerText.style.margin = "0px";
+    winnerText.style.fontWeight = "300";
+    winnerText.innerHTML = "You are more likely to prefer this image by " + winnerLikelihood + "%";
+
+    const loserStats = document.createElement("div");
+    loserStats.style.display = "inline-block";
+    loserStats.style.textAlign = "center";
+    loserStats.style.borderRadius = "10px";
+    loserStats.style.position = "absolute";
+    loserStats.style.transition = "all 0.5s ease";
+    loserStats.style.padding = "3vw";
+    loserStats.style.backgroundColor = "#ffffff";
+    if(index == 1){
+        loserStats.style.right = "10px";
+    }else{
+        loserStats.style.left = "10px";
+    }
+    loserStats.style.bottom = "30%";
+
+
+    const loserText = document.createElement("div");
+    loserText.style.fontSize = "1.5rem";
+    loserText.style.margin = "0px";
+    loserText.style.fontWeight = "300";
+    loserText.innerHTML = "You are more likely to prefer this image by " + loserLikelihood + "%";
+
+    winnerStats.appendChild(winnerText);
+    loserStats.appendChild(loserText);
+
+    document.getElementById("root").appendChild(winnerStats);
+    document.getElementById("root").appendChild(loserStats);
+
+    setTimeout(() => {
+      winnerStats.style.opacity = "0";
+      loserStats.style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("root").removeChild(winnerStats);
+        document.getElementById("root").removeChild(loserStats);
+      }, 500);
+    }
+    , 1000);
+*/
+
+
+  }
 
   const {images, isLandscape, imgStyle, caption, imageCSS} = gameState;
 
@@ -218,6 +372,7 @@ const ImageGameScreen = () => {
           <Animatable.View
           ref={backRef1}
           style={[imageCSS, {position:'absolute', backgroundColor:"#D3D3D3",zIndex:-2}]}/>
+          <View ref={leftRef} style={[imageCSS, statsCSS, {position:'absolute', backgroundColor:"white",zIndex:4, opacity:0}]}/>
         </TouchableOpacity>
         <Text style={styles.text}>{caption}</Text>
         <TouchableOpacity onPress={() => handlePress(images[1], images[0], 2)}>
@@ -229,6 +384,7 @@ const ImageGameScreen = () => {
         <Animatable.View
             ref={backRef2}
             style={[imageCSS, {position:'absolute', backgroundColor:"#D3D3D3", zIndex:-2}]}/>
+            <View ref={rightRef} id="left" style={[imageCSS, statsCSS, {position:'absolute', backgroundColor:"white", opacity:0 ,zIndex:4}]} />
         </TouchableOpacity>
       </View>
     </View>
