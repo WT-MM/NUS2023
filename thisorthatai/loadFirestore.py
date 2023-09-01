@@ -24,6 +24,13 @@ def set_data(collection, document, data):
     doc_ref = db.collection(collection).document(document)
     doc_ref.set(data)
 
+def getDataWithQuery(collection, *query):
+    data = {}
+    docs = db.collection(collection).where("gameType", "==", "image").get()
+    for doc in docs:
+        data[doc.id] = doc.to_dict()
+    return data
+
 def exportData(wantedCollection=None):
     # Export all data from Firestore
 
@@ -62,8 +69,10 @@ def importData(data):
             # Set document data
             set_data(collection, document, data[collection][document])
 
-mm = exportData(wantedCollection="test")
 
-with open("test.json", "w") as f:
-    json.dump(mm, f)
+if __name__ == "__main__":
+    mm = exportData(wantedCollection="test")
+
+    with open("test.json", "w") as f:
+        json.dump(mm, f)
 

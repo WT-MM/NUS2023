@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { View, Text, StyleSheet, Alert, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { serverTimestamp, addDoc, collection, getDoc, setDoc, doc, increment } from 'firebase/firestore';
 import { ref, getDownloadURL } from 'firebase/storage';
@@ -8,12 +8,11 @@ import { db, auth, storage } from '../firebase';
 
 import promptsJson from '../imageReference.json';
 import imagesJson from '../imagePrompts.json';
-import { set } from 'react-native-reanimated';
 
 const statsCSS = {
-  fontSize: '2rem',
+  fontSize: '1.4rem',
   textAlign: 'center',
-  paddingTop: '40%',
+  paddingTop: '20%',
   fontWeight:350,
   verticalAlign: 'middle',
   fontFamily: 'Roboto',
@@ -46,14 +45,14 @@ const styles = StyleSheet.create({
     fontWeight:350,  },
     img: {
         width:"78vw",
-        resizeMode: 'cover',
+        resizeMode: 'contain',
         aspectRatio: 1/1,
         borderRadius:10,
         maxHeight:"37vh"
     },
     imgLandscape: {
         width:"38vw",
-        resizeMode: 'cover',
+        resizeMode: 'contain',
         aspectRatio: 1/1,
         borderRadius:10,
         maxHeight:"78vh"
@@ -251,15 +250,11 @@ const ImageGameScreen = () => {
     const winnerLikelihood = modelStats[winnerModel][loserModel];
     const loserLikelihood = modelStats[loserModel][winnerModel];
 
-    console.log("winnerLikelihood: " + winnerLikelihood)
-    console.log("loserLikelihood: " + loserLikelihood)
-
-
     let left = leftRef.current;
     let right = rightRef.current;
 
-    right.style.opacity = 0.7;
-    left.style.opacity = 0.7;
+    right.style.opacity = 0.8;
+    left.style.opacity = 0.8;
     
     right.style.transition= "opacity 0.5s";
     left.style.transition= "opacity 0.5s";
@@ -267,12 +262,12 @@ const ImageGameScreen = () => {
 
 
     if(index == 1){
-        left.innerHTML = "This image had a " + Math.round(winnerLikelihood*100) + "% chance of winning you over!";
-        right.innerHTML = "This image had a " + Math.round(loserLikelihood*100) + "% chance of winning you over!";
+        left.innerHTML = "This image had a " + Math.round(winnerLikelihood*100) + "% chance of winning you over!<br><br> Its model has a " + Math.round(modelStats[winnerModel]['elo']) + " elo rating!";
+        right.innerHTML = "This image had a " + Math.round(loserLikelihood*100) + "% chance of winning you over!<br><br> Its model has a " + Math.round(modelStats[loserModel]['elo']) + " elo rating!";
 
     }else{
-        left.innerHTML = "This image had a " + Math.round(loserLikelihood*100) + "% chance of winning you over!";
-        right.innerHTML = "This image had a " + Math.round(winnerLikelihood*100) + "% chance of winning you over!";
+        left.innerHTML = "This image had a " + Math.round(loserLikelihood*100) + "% chance of winning you over!<br><br> Its model has a " + Math.round(modelStats[loserModel]['elo']) + " elo rating!";
+        right.innerHTML = "This image had a " + Math.round(winnerLikelihood*100) + "% chance of winning you over!<br><br> Its model has a " + Math.round(modelStats[winnerModel]['elo']) + " elo rating!";
     }
 
     setTimeout(() => {
