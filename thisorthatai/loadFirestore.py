@@ -24,9 +24,9 @@ def set_data(collection, document, data):
     doc_ref = db.collection(collection).document(document)
     doc_ref.set(data)
 
-def getDataWithQuery(collection, *query):
+def getDataWithQuery(collection, query):
     data = {}
-    docs = db.collection(collection).where("gameType", "==", "image").get()
+    docs = db.collection(collection).where(query[0], '==', query[1]).get()
     for doc in docs:
         data[doc.id] = doc.to_dict()
     return data

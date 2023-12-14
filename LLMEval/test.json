@@ -1,1 +1,312 @@
-{"test": {"0etvYb5lYeLa3LnoX99G": {"prompt": "The weather today is sunny.", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958543.121}, "2cEACEfSjrJhoApldcXc": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958548.902}, "8lRqSHKjUKgGdMEAZ2fn": {"prompt": "Complete the sentence: \"Life is like a...\"", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958544.515}, "92whO0MfOayJ2Boteo33": {"prompt": "What are the benefits of regular exercise?", "winner": "itsamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958551.918}, "CfgUxjCWip8oApMbNeK9": {"prompt": "The weather today is sunny.", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958547.109}, "D5ZrYUNoZp26RR8zfgQk": {"prompt": "The weather today is sunny.", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "isthisamodel", "timestamp": 1688958552.234}, "DQOqMJAHTPEY65NYljaF": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "yepmodel", "session": "f54b65ec-7331-4d77-aa26-952d3d8b10f2", "loser": "itsamodel", "timestamp": 1688953297.098}, "DShLWIwrE1IsbkY7COOo": {"prompt": "The weather today is sunny.", "winner": "itsamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958541.793}, "E6uDFi5Qcz1WObdOItGG": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "itsamodel", "timestamp": 1688958542.16}, "EUJkG2EG7HXlU6asnVYG": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "isthisamodel", "timestamp": 1688958551.572}, "I9b6tJoQbiq43IkTiP1r": {"prompt": "What are the benefits of regular exercise?", "winner": "nopemodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "itsamodel", "timestamp": 1688958544.985}, "LBUFYKpFHIWqamKOjA30": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "nopemodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958545.846}, "MEyLIHGkzly9iC7e58xm": {"prompt": "Complete the sentence: \"Life is like a...\"", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958540.56}, "MjFghThsV5grvpjCjoBz": {"prompt": "Complete the sentence: \"Life is like a...\"", "winner": "itsamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958550.841}, "Mt6AhQuM7bj023Q7ZW3A": {"prompt": "I like to eat pizza.", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958548.446}, "N5sU7EoiXZtLLxJuyAUw": {"prompt": "The weather today is sunny.", "winner": "definitelyamodel", "session": "f81badb0-7a59-48ee-ae74-260c5e302a5c", "loser": "isthisamodel", "timestamp": 1688713058.492}, "SZJKwM9mx6cjQP2dXMHh": {"prompt": "Complete the sentence: \"Life is like a...\"", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "itsamodel", "timestamp": 1688958538.162}, "T49Y73AoHB5zlx6mMGuO": {"prompt": "What are the benefits of regular exercise?", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "nopemodel", "timestamp": 1688958552.849}, "TE4vtlA5ciVBHdrwL2aG": {"prompt": "I like to eat pizza.", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958545.415}, "WepDHb0exDEli41rREuB": {"prompt": "Complete the sentence: \"Life is like a...\"", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "itsamodel", "timestamp": 1688958546.255}, "ZJt0mN2J6JJsW1a6KFRK": {"prompt": "The weather today is sunny.", "winner": "itsamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "isthisamodel", "timestamp": 1688958540.938}, "fa5VhKE8VP2vVcxkYLVF": {"prompt": "I like to eat pizza.", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958549.302}, "fkrKItF4BFO9mqCgpEDf": {"prompt": "Complete the sentence: \"Life is like a...\"", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "nopemodel", "timestamp": 1688958550.071}, "gS6nUxbLGIS6IP3ePM0i": {"prompt": "The weather today is sunny.", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "isthisamodel", "timestamp": 1688958542.495}, "gWTmosBwXmMqMBOQmryk": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "nopemodel", "timestamp": 1688958543.605}, "gfhSpI6MwibhIcsJDARo": {"prompt": "The weather today is sunny.", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958554.702}, "iFsYTMMm8Sny9oWFQV0s": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "nopemodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958549.717}, "iGRZqYlUynRPdfd6KJX7": {"prompt": "The weather today is sunny.", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "itsamodel", "timestamp": 1688958544.068}, "n48udPGp5k9htgAVgIq9": {"prompt": "I like to eat pizza.", "winner": "itsamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958555.579}, "nOeYohTOGs0l6LzxnLiL": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "itsamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958541.36}, "oNqAsXPAQdOxxodwjhSq": {"prompt": "The weather today is sunny.", "winner": "isthisamodel", "session": "f54b65ec-7331-4d77-aa26-952d3d8b10f2", "loser": "definitelyamodel", "timestamp": 1688953299.313}, "p045KyvVQbdOvc4o1LaF": {"prompt": "What are the benefits of regular exercise?", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958554.173}, "qBBirVCo34GE19VDfocy": {"prompt": "What are the benefits of regular exercise?", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958553.497}, "qEnHDW6FRrjeXeNTiPmP": {"prompt": "The weather today is sunny.", "winner": "itsamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958550.465}, "s3oq3XT0B2ZPo2kTC6ot": {"prompt": "I like to eat pizza.", "winner": "yepmodel", "session": "f54b65ec-7331-4d77-aa26-952d3d8b10f2", "loser": "itsamodel", "timestamp": 1688953299.935}, "tJLtrOMy7HqxONArBcjc": {"prompt": "The weather today is sunny.", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "isthisamodel", "timestamp": 1688958556.019}, "tMY5xzOttd640DT9Ndue": {"prompt": "What are the benefits of regular exercise?", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "isthisamodel", "timestamp": 1688958553.912}, "v9Pdlo1OyWXYWcrMcRw1": {"prompt": "Complete the sentence: \"Life is like a...\"", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958553.243}, "weQdgr6jOW3uEEra4lzQ": {"prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.", "winner": "nopemodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958548.076}, "xFHBDZplU6N3oRXjJYF0": {"prompt": "The weather today is sunny.", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "itsamodel", "timestamp": 1688958546.664}, "xYlyWgr2iaEox4wQd29L": {"prompt": "What are the benefits of regular exercise?", "winner": "yepmodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "definitelyamodel", "timestamp": 1688958551.219}, "yMnr6ui26A362es2DOcc": {"prompt": "The weather today is sunny.", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "itsamodel", "timestamp": 1688958539.627}, "zLGSDfChvtoWvVwhfDtY": {"prompt": "Complete the sentence: \"Life is like a...\"", "winner": "isthisamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "yepmodel", "timestamp": 1688958552.559}, "zbvf6YHQQYV1vTtj2zON": {"prompt": "What are the benefits of regular exercise?", "winner": "definitelyamodel", "session": "172393b5-7ed5-487e-8770-8f01181076b4", "loser": "nopemodel", "timestamp": 1688958539.129}}}
+{
+    "test": {
+        "0etvYb5lYeLa3LnoX99G": {
+            "prompt": "The weather today is sunny.",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958543.121
+        },
+        "2cEACEfSjrJhoApldcXc": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958548.902
+        },
+        "8lRqSHKjUKgGdMEAZ2fn": {
+            "prompt": "Complete the sentence: \"Life is like a...\"",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958544.515
+        },
+        "92whO0MfOayJ2Boteo33": {
+            "prompt": "What are the benefits of regular exercise?",
+            "winner": "itsamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958551.918
+        },
+        "CfgUxjCWip8oApMbNeK9": {
+            "prompt": "The weather today is sunny.",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958547.109
+        },
+        "D5ZrYUNoZp26RR8zfgQk": {
+            "prompt": "The weather today is sunny.",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "isthisamodel",
+            "timestamp": 1688958552.234
+        },
+        "DQOqMJAHTPEY65NYljaF": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "yepmodel",
+            "session": "f54b65ec-7331-4d77-aa26-952d3d8b10f2",
+            "loser": "itsamodel",
+            "timestamp": 1688953297.098
+        },
+        "DShLWIwrE1IsbkY7COOo": {
+            "prompt": "The weather today is sunny.",
+            "winner": "itsamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958541.793
+        },
+        "E6uDFi5Qcz1WObdOItGG": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "itsamodel",
+            "timestamp": 1688958542.16
+        },
+        "EUJkG2EG7HXlU6asnVYG": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "isthisamodel",
+            "timestamp": 1688958551.572
+        },
+        "I9b6tJoQbiq43IkTiP1r": {
+            "prompt": "What are the benefits of regular exercise?",
+            "winner": "nopemodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "itsamodel",
+            "timestamp": 1688958544.985
+        },
+        "LBUFYKpFHIWqamKOjA30": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "nopemodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958545.846
+        },
+        "MEyLIHGkzly9iC7e58xm": {
+            "prompt": "Complete the sentence: \"Life is like a...\"",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958540.56
+        },
+        "MjFghThsV5grvpjCjoBz": {
+            "prompt": "Complete the sentence: \"Life is like a...\"",
+            "winner": "itsamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958550.841
+        },
+        "Mt6AhQuM7bj023Q7ZW3A": {
+            "prompt": "I like to eat pizza.",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958548.446
+        },
+        "N5sU7EoiXZtLLxJuyAUw": {
+            "prompt": "The weather today is sunny.",
+            "winner": "definitelyamodel",
+            "session": "f81badb0-7a59-48ee-ae74-260c5e302a5c",
+            "loser": "isthisamodel",
+            "timestamp": 1688713058.492
+        },
+        "SZJKwM9mx6cjQP2dXMHh": {
+            "prompt": "Complete the sentence: \"Life is like a...\"",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "itsamodel",
+            "timestamp": 1688958538.162
+        },
+        "T49Y73AoHB5zlx6mMGuO": {
+            "prompt": "What are the benefits of regular exercise?",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "nopemodel",
+            "timestamp": 1688958552.849
+        },
+        "TE4vtlA5ciVBHdrwL2aG": {
+            "prompt": "I like to eat pizza.",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958545.415
+        },
+        "WepDHb0exDEli41rREuB": {
+            "prompt": "Complete the sentence: \"Life is like a...\"",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "itsamodel",
+            "timestamp": 1688958546.255
+        },
+        "ZJt0mN2J6JJsW1a6KFRK": {
+            "prompt": "The weather today is sunny.",
+            "winner": "itsamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "isthisamodel",
+            "timestamp": 1688958540.938
+        },
+        "fa5VhKE8VP2vVcxkYLVF": {
+            "prompt": "I like to eat pizza.",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958549.302
+        },
+        "fkrKItF4BFO9mqCgpEDf": {
+            "prompt": "Complete the sentence: \"Life is like a...\"",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "nopemodel",
+            "timestamp": 1688958550.071
+        },
+        "gS6nUxbLGIS6IP3ePM0i": {
+            "prompt": "The weather today is sunny.",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "isthisamodel",
+            "timestamp": 1688958542.495
+        },
+        "gWTmosBwXmMqMBOQmryk": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "nopemodel",
+            "timestamp": 1688958543.605
+        },
+        "gfhSpI6MwibhIcsJDARo": {
+            "prompt": "The weather today is sunny.",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958554.702
+        },
+        "iFsYTMMm8Sny9oWFQV0s": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "nopemodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958549.717
+        },
+        "iGRZqYlUynRPdfd6KJX7": {
+            "prompt": "The weather today is sunny.",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "itsamodel",
+            "timestamp": 1688958544.068
+        },
+        "n48udPGp5k9htgAVgIq9": {
+            "prompt": "I like to eat pizza.",
+            "winner": "itsamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958555.579
+        },
+        "nOeYohTOGs0l6LzxnLiL": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "itsamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958541.36
+        },
+        "oNqAsXPAQdOxxodwjhSq": {
+            "prompt": "The weather today is sunny.",
+            "winner": "isthisamodel",
+            "session": "f54b65ec-7331-4d77-aa26-952d3d8b10f2",
+            "loser": "definitelyamodel",
+            "timestamp": 1688953299.313
+        },
+        "p045KyvVQbdOvc4o1LaF": {
+            "prompt": "What are the benefits of regular exercise?",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958554.173
+        },
+        "qBBirVCo34GE19VDfocy": {
+            "prompt": "What are the benefits of regular exercise?",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958553.497
+        },
+        "qEnHDW6FRrjeXeNTiPmP": {
+            "prompt": "The weather today is sunny.",
+            "winner": "itsamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958550.465
+        },
+        "s3oq3XT0B2ZPo2kTC6ot": {
+            "prompt": "I like to eat pizza.",
+            "winner": "yepmodel",
+            "session": "f54b65ec-7331-4d77-aa26-952d3d8b10f2",
+            "loser": "itsamodel",
+            "timestamp": 1688953299.935
+        },
+        "tJLtrOMy7HqxONArBcjc": {
+            "prompt": "The weather today is sunny.",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "isthisamodel",
+            "timestamp": 1688958556.019
+        },
+        "tMY5xzOttd640DT9Ndue": {
+            "prompt": "What are the benefits of regular exercise?",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "isthisamodel",
+            "timestamp": 1688958553.912
+        },
+        "v9Pdlo1OyWXYWcrMcRw1": {
+            "prompt": "Complete the sentence: \"Life is like a...\"",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958553.243
+        },
+        "weQdgr6jOW3uEEra4lzQ": {
+            "prompt": "Please write a Shakespearean sonnet on the joys of drive-throughs.",
+            "winner": "nopemodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958548.076
+        },
+        "xFHBDZplU6N3oRXjJYF0": {
+            "prompt": "The weather today is sunny.",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "itsamodel",
+            "timestamp": 1688958546.664
+        },
+        "xYlyWgr2iaEox4wQd29L": {
+            "prompt": "What are the benefits of regular exercise?",
+            "winner": "yepmodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "definitelyamodel",
+            "timestamp": 1688958551.219
+        },
+        "yMnr6ui26A362es2DOcc": {
+            "prompt": "The weather today is sunny.",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "itsamodel",
+            "timestamp": 1688958539.627
+        },
+        "zLGSDfChvtoWvVwhfDtY": {
+            "prompt": "Complete the sentence: \"Life is like a...\"",
+            "winner": "isthisamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "yepmodel",
+            "timestamp": 1688958552.559
+        },
+        "zbvf6YHQQYV1vTtj2zON": {
+            "prompt": "What are the benefits of regular exercise?",
+            "winner": "definitelyamodel",
+            "session": "172393b5-7ed5-487e-8770-8f01181076b4",
+            "loser": "nopemodel",
+            "timestamp": 1688958539.129
+        }
+    }
+}
